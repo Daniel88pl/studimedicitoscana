@@ -167,14 +167,51 @@ Eseguiamo visite preventive e periodiche per attestare l'idoneità alla mansione
   {
     id: 'medicina-legale',
     title: 'Medicina legale',
-    description: 'Consulenze medico‑legali, certificazioni e perizie collegate a incidenti o malasanità.',
-    longDescription: 'Attraverso i nostri consulenti esperti, offriamo servizi di medicina legale per infortunistica stradale (RCA), casi di malasanità, responsabilità professionale e pratiche assicurative. L\'assistenza comprende la valutazione medico-legale del danno biologico, sia in ambito stragiudiziale che per consulenze tecniche d\'ufficio (CTU).',
+    description: 'Perizie di parte, consulenze assicurative e valutazione del danno biologico per RCA, malasanità e infortuni privati. Prima valutazione gratuita.',
+    longDescription: `### Cosa facciamo
+
+Studi Medici Toscana collabora con specialisti in Medicina Legale per la redazione di **perizie di parte** e consulenze tecniche in ambito di responsabilità civile, infortunistica privata e responsabilità professionale medica.
+
+Il nostro approccio è multidisciplinare: medici legali esperti in materia assicurativa lavorano in stretta collaborazione con gli specialisti delle altre branche cliniche e chirurgiche, garantendo un'analisi completa anche nei casi più complessi.
+
+---
+
+### Per quali situazioni possiamo aiutarti
+
+**Responsabilità Civile Auto (RCA)**
+
+Valutazione medico-legale del danno biologico conseguente a incidenti stradali, con perizia di parte a supporto della richiesta risarcitoria.
+
+**Responsabilità professionale medica (malasanità)**
+
+Analisi della documentazione clinica, valutazione delle eventuali omissioni o errori diagnostici e terapeutici, redazione della perizia tecnica di parte.
+
+**Polizza privata infortuni**
+
+Consulenza specialistica per la quantificazione del danno e supporto nelle trattative con le compagnie assicurative.
+
+---
+
+### Presa in carico completa
+
+I nostri specialisti possono seguire il paziente danneggiato **in tutta la fase post-traumatica**: dalla prima valutazione clinica alle visite di controllo, fino alla chiusura della pratica.
+
+Nelle nostre strutture operano medici delle principali specialità cliniche e chirurgiche, pronti a supportare il medico legale con referti e valutazioni specifiche per ogni caso.
+
+---
+
+### Come iniziare
+
+Porta la tua pratica presso i nostri studi: effettuiamo una **prima valutazione gratuita** per analizzare il caso e fornirti un preventivo chiaro e dettagliato, senza impegno.`,
     icon: Gavel,
     color: 'bg-natural-accent/10 text-natural-accent',
-    details: ['Pratiche Assicurative', 'Infortuni RCA', 'Contenziosi'],
+    details: ['Prima Valutazione Gratuita', 'Perizie RCA e Malasanità', 'Supporto Post-Traumatico'],
     faq: [
-      { question: 'Cosa devo portare per una prima valutazione?', answer: 'È essenziale portare tutta la documentazione medica relativa all\'evento traumatico (pronto soccorso, referti, esami strumentali) e l\'eventuale documentazione assicurativa.' },
-      { question: 'Effettuate valutazioni per danno da malasanità?', answer: 'Sì, i nostri specialisti offrono consulenze per responsabilità professionale e casi di presunta malasanità.' }
+      { question: 'La prima valutazione è davvero gratuita?', answer: 'Sì. Puoi portare la tua pratica presso i nostri studi senza alcun impegno: analizziamo il caso e ti forniamo un preventivo chiaro prima di procedere.' },
+      { question: 'Cosa devo portare per la prima valutazione?', answer: 'È utile portare tutta la documentazione medica relativa all\'evento (referti del pronto soccorso, esami strumentali, cartelle cliniche) e, se disponibile, la documentazione assicurativa o legale già in tuo possesso.' },
+      { question: 'Cosa si intende per perizia di parte?', answer: 'È una valutazione tecnica redatta da un medico legale che tutela gli interessi del danneggiato — non della compagnia assicurativa o della controparte. Serve a quantificare correttamente il danno biologico e supportare la richiesta di risarcimento.' },
+      { question: 'Gestite anche casi di presunta malasanità?', answer: 'Sì. I nostri medici legali analizzano la documentazione clinica per valutare eventuali omissioni, errori diagnostici o terapeutici e redigono la perizia tecnica di parte necessaria per avviare la procedura stragiudiziale o giudiziale.' },
+      { question: 'Potete seguirmi anche dopo l\'infortunio, non solo per la perizia?', answer: 'Sì. Gli specialisti presenti nelle nostre strutture possono seguire il paziente in tutta la fase post-traumatica, dalle visite di controllo agli accertamenti strumentali, collaborando con il medico legale per una valutazione integrata del caso.' }
     ]
   },
   {
