@@ -193,14 +193,88 @@ Eseguiamo visite preventive e periodiche per attestare l'idoneità alla mansione
   {
     id: 'servizio-domicilio',
     title: 'Servizio a domicilio',
-    description: 'Prestazioni medico‑sanitarie e certificazioni a domicilio per pazienti con difficoltà di spostamento.',
-    longDescription: 'Studi Medici Toscana estende le sue cure direttamente a casa dei pazienti. Il servizio a domicilio include visite specialistiche, prelievi ematici ed esami strumentali (come ECG o ecografie portatili) per tutti i pazienti che, per problemi di salute o disabilità, hanno difficoltà a raggiungere i nostri centri.',
+    description: 'Visite specialistiche, infermieristica e diagnostica direttamente a casa tua — entro 24/48 ore, senza costi aggiuntivi rispetto alla visita in sede.',
+    longDescription: `### Un medico a casa tua, quando ne hai bisogno
+
+Il nostro centro eroga visite specialistiche private a domicilio entro **24/48 ore** dalla richiesta, in base all'urgenza. Lo stesso servizio è disponibile anche presso la nostra sede di Viale Antonio Gramsci 3, Pisa.
+
+Nessun costo aggiuntivo: la prestazione domiciliare ha lo stesso prezzo della visita in struttura.
+
+---
+
+### A chi si rivolge
+
+Il servizio è pensato per chi ha difficoltà a spostarsi o preferisce la comodità della propria abitazione:
+
+- Pazienti con difficoltà motorie o impossibilitati a deambulare
+- Anziani e pazienti fragili
+- Studenti e lavoratori fuori sede
+- Ospiti di alberghi o strutture ricettive
+- Stranieri temporaneamente presenti sul territorio
+- Chiunque abbia la necessità di una visita senza spostarsi
+
+---
+
+### Cosa portiamo a domicilio
+
+Ogni specialista si presenta con la propria strumentazione portatile, per eseguire tutti gli accertamenti necessari direttamente sul posto:
+
+- **Ecografo** – ecografie addominali, muscolari, tiroidee e altro
+- **Elettrocardiografo** – ECG a riposo con referto immediato
+- **Eco-color Doppler** – valutazione vascolare e cardiologica
+- **Strumentazione odontoiatrica** – il servizio include anche la specialistica dentistica a domicilio
+
+---
+
+### Team infermieristico
+
+Il nostro personale infermieristico è regolarmente iscritto all'albo professionale e coperto da polizza assicurativa. Esegue a domicilio o in sede:
+
+- Medicazioni e terapie iniettive
+- Prelievi ematici
+- Assistenza e monitoraggio clinico
+
+---
+
+### Diagnostica RX a domicilio
+
+In collaborazione con un istituto esterno accreditato, è possibile eseguire esami radiografici digitali direttamente a casa del paziente, con **refertazione immediata** consegnata in formato digitale o cartaceo.
+
+Si possono effettuare tutti i principali esami RX senza mezzo di contrasto (esclusi OPT, mammografia e gigantografia).
+
+---
+
+### Disponibilità
+
+Il servizio è attivo **365 giorni l'anno, 7 giorni su 7**, con priorità in base all'urgenza clinica.`,
     icon: Home,
     color: 'bg-natural-accent/10 text-natural-accent',
-    details: ['Visite Domiciliari', 'Prelievi Ematici', 'Terapie e Infermieristica'],
+    details: ['Entro 24/48 ore', 'Nessun costo aggiuntivo', '365 giorni l\'anno'],
     faq: [
-      { question: 'In quali zone è attivo il servizio a domicilio?', answer: 'Il servizio copre varie province toscane limitrofe alle nostre sedi di Pisa e Grosseto. Contattaci per verificare la disponibilità nella tua zona.' },
-      { question: 'Quali prestazioni possono essere erogate a domicilio?', answer: 'Eseguiamo prelievi di sangue, medicazioni, elettrocardiogrammi con dispositivi portatili e visite di medicina generale o geriatria.' }
+      {
+        question: 'La visita a domicilio costa di più rispetto a quella in sede?',
+        answer: 'No. Il nostro personale medico e paramedico non applica alcun sovrapprezzo per le prestazioni domiciliari. Il costo è identico a quello della visita in struttura.'
+      },
+      {
+        question: 'In quanto tempo arriva il medico?',
+        answer: 'Le visite vengono effettuate entro 24/48 ore dalla richiesta. In caso di urgenza, il tempo di intervento viene ridotto al minimo possibile. Contattaci per valutare insieme la situazione.'
+      },
+      {
+        question: 'Quali specialisti sono disponibili a domicilio?',
+        answer: 'Sono disponibili le principali specialità mediche, oltre a terapisti, osteopati e infermieri. Ogni professionista si presenta con la propria strumentazione portatile (ecografo, ECG, eco-color Doppler, ecc.). Il servizio include anche la specialistica odontoiatrica.'
+      },
+      {
+        question: 'Come si prenota il servizio?',
+        answer: 'Puoi prenotare telefonicamente, via WhatsApp o via email. Il servizio viene attivato nel più breve tempo possibile dalla richiesta.'
+      },
+      {
+        question: 'Il servizio è disponibile anche nei weekend e nei festivi?',
+        answer: 'Sì. Il nostro team è operativo 365 giorni l\'anno, 7 giorni su 7, con priorità gestita in base all\'urgenza clinica del paziente.'
+      },
+      {
+        question: 'È possibile fare esami del sangue e radiografie a domicilio?',
+        answer: 'Sì a entrambi. Il personale infermieristico esegue prelievi ematici con referti tramite laboratori convenzionati. Per la diagnostica RX, disponiamo di apparecchiatura digitale portatile per tutti i principali esami senza mezzo di contrasto, con referto immediato.'
+      }
     ]
   }
 ];
