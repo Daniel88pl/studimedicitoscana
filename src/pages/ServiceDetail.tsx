@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { services } from '../data/services';
 import { ArrowLeft, ChevronRight, HelpCircle, MessageCircle, Mail } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import Contact from '../components/Contact';
 import { useEffect } from 'react';
 import { useSEO } from '../hooks/useSEO';

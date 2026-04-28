@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Briefcase, CheckCircle2, ChevronRight, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

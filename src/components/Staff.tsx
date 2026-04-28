@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { MapPin, Phone, Mail, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';

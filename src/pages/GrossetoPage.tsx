@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useSEO } from '../hooks/useSEO';
 import { CONTACT } from '../config/contact';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';

@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ShieldCheck, Clock, Award, MessageCircle, Mail } from 'lucide-react';
 import { CONTACT } from '../config/contact';
 

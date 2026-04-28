@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ChevronRight, HelpCircle, MessageCircle, Mail } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useSEO } from '../hooks/useSEO';
 import { CONTACT } from '../config/contact';
 import { services } from '../data/services';
