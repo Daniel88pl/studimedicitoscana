@@ -21,16 +21,68 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: 'visite-specialistiche',
-    title: 'Visite specialistiche',
-    description: 'Ortopedia, endocrinologia, neurologia, dermatologia, urologia, rreumatologia, cardiologia, chirurgia, e molto altro.',
-    longDescription: 'Il nostro centro offre un\'ampia gamma di visite specialistiche per rispondere a tutte le esigenze di cura e prevenzione. Dalla dermatologia alla cardiologia, il nostro staff medico altamente qualificato utilizza le migliori tecnologie per fornire diagnosi accurate e terapie mirate. Le visite specialistiche sono rivolte sia agli adulti che ai bambini, con un approccio personalizzato e attento al benessere complessivo del paziente.',
+    id: 'servizi-ambulatorio',
+    title: 'Servizi ambulatoriali',
+    description: 'Visite specialistiche per adulti e bambini, prelievi ematici, equipe pediatrica e diagnostica per immagini in un unico centro.',
+    longDescription: `### Cosa offriamo
+
+Il nostro ambulatorio mette a disposizione un'équipe multidisciplinare di medici specialisti per adulti e bambini, con un servizio infermieristico interno dedicato alle prestazioni quotidiane più frequenti.
+
+Un punto di riferimento completo: dalla visita specialistica agli esami del sangue, fino alla diagnostica per immagini — tutto gestito in una sola struttura.
+
+---
+
+### Servizio infermieristico e prelievi
+
+Il nostro infermiere interno esegue prestazioni infermieristiche e prelievi ematici per pazienti privati, con referti elaborati dai laboratori d'analisi convenzionati e consegnati direttamente al paziente.
+
+I prelievi sono disponibili anche nell'ambito della **medicina del lavoro**, integrandosi con i protocolli sanitari aziendali.
+
+---
+
+### Équipe pediatrica specialistica
+
+Offriamo un percorso dedicato all'età evolutiva con professionisti specializzati:
+
+- **Logopedista** – valutazione e trattamento dei disturbi del linguaggio e della comunicazione
+- **Neuropsichiatra infantile** – diagnosi e supporto per disturbi neurologici e psichiatrici in età pediatrica
+- **Psicologo infantile** – sostegno psicologico per bambini e famiglie
+- **Nutrizionista pediatrica** – piani alimentari personalizzati per la crescita
+- **Ortopedico pediatrico** – valutazione posturale e trattamento patologie muscolo-scheletriche
+
+---
+
+### Diagnostica per immagini – RX digitale
+
+In collaborazione con un istituto esterno accreditato, offriamo esami radiografici con tecnologia digitale e **refertazione immediata**, consegnata direttamente a casa del paziente o presso i nostri studi.
+
+Con questa apparecchiatura è possibile eseguire tutti i principali esami RX senza mezzo di contrasto, per ogni tipo di paziente.
+
+**Il servizio è disponibile anche a domicilio**, per chi non può spostarsi o preferisce la comodità della propria abitazione.`,
     icon: Stethoscope,
     color: 'bg-natural-accent/10 text-natural-accent',
-    details: ['Adulti e Bambini', 'Oltre 15 specialità', 'Nutrizione e Psicologia'],
+    details: ['Specialisti Adulti e Bambini', 'Prelievi Ematici', 'RX Digitale con Referto Immediato'],
     faq: [
-      { question: 'Quanto dura in media una visita specialistica?', answer: 'La durata varia in base alla specialità, ma in genere si attesta tra i 30 e i 45 minuti per consentire un inquadramento clinico completo.' },
-      { question: 'È necessario presentare un\'impegnativa medica?', answer: 'Non è strettamente necessaria l\'impegnativa, trattandosi di una struttura privata, ma è sempre consigliato portare con sé tutta la documentazione medica precedente.' }
+      {
+        question: 'Devo prenotare in anticipo per il prelievo del sangue?',
+        answer: 'Sì, consigliamo sempre di prenotare per garantirti un orario preciso e ridurre i tempi di attesa. Puoi farlo tramite WhatsApp o email.'
+      },
+      {
+        question: 'I referti degli esami del sangue dove li ricevo?',
+        answer: 'I referti vengono elaborati dai laboratori d\'analisi convenzionati e ti vengono consegnati direttamente, nella modalità che preferisci: cartaceo in sede o digitale via email.'
+      },
+      {
+        question: 'Quali esami RX si possono fare?',
+        answer: 'Si possono eseguire tutti i principali esami radiografici senza mezzo di contrasto. Sono esclusi OPT (ortopantomografia), mammografia e gigantografia, che richiedono apparecchiature dedicate.'
+      },
+      {
+        question: 'Il servizio RX è disponibile anche a domicilio?',
+        answer: 'Sì. L\'apparecchiatura digitale è trasportabile, quindi possiamo effettuare l\'esame direttamente a casa del paziente. Il referto viene consegnato in forma digitale o cartacea.'
+      },
+      {
+        question: 'A che età si rivolgono i vostri specialisti pediatrici?',
+        answer: 'L\'équipe pediatrica segue bambini dalla prima infanzia fino all\'adolescenza. Per ogni specialità, il professionista valuterà il percorso più adatto in base all\'età e alle esigenze del piccolo paziente.'
+      }
     ]
   },
   {
