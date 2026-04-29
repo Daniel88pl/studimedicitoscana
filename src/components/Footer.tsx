@@ -326,16 +326,18 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-[18px]">
             <span>© {new Date().getFullYear()} Studi Medici Toscana</span>
             <span style={{ color: 'rgba(31,36,32,0.22)' }}>·</span>
-            <span>P.IVA 00000000000</span>
-            <span style={{ color: 'rgba(31,36,32,0.22)' }}>·</span>
-            <span>Direttore sanitario: Dr. [Nome]</span>
+            <span>P.IVA 01400870471</span>
           </div>
           <div className="flex flex-wrap gap-4">
             {LEGAL.map((l) => (
-              <a key={l.label} href={l.href} className="no-underline"
-                style={{ color: 'rgba(31,36,32,0.42)' }}>
+              <Link
+                key={l.label}
+                to={l.href}
+                className="no-underline transition-colors hover:text-[#1f2420]"
+                style={{ color: 'rgba(31,36,32,0.42)' }}
+              >
                 {l.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
