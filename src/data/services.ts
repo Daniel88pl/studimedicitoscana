@@ -217,14 +217,64 @@ Porta la tua pratica presso i nostri studi: effettuiamo una **prima valutazione 
   {
     id: 'patente-porto-armi',
     title: 'Rinnovo Patente e porto d\'armi',
-    description: 'Rinnovo e rilascio di patenti auto, nautiche e certificazioni per porto d\'armi in sede.',
-    longDescription: 'Servizio rapido e organizzato per il rinnovo delle patenti di guida (A, B, C, D, E), patenti nautiche e certificazioni per il porto d\'armi. Durante un unico appuntamento è possibile effettuare la visita medica in sede, accertamenti necessari e completare la pratica burocratica per il rilascio o il rinnovo.',
+    description: 'Rinnovo e rilascio di patenti auto, nautiche e certificazioni per porto d\'armi. Pensiamo noi a tutta la burocrazia — tu porta solo i documenti.',
+    longDescription: `### Un appuntamento, zero pensieri
+
+Puoi affidarti a Studi Medici Toscana per tutte le pratiche relative alle patenti di qualunque categoria, al porto d'armi e alle patenti nautiche — dal primo rilascio al rinnovo.
+
+Il nostro team gestisce ogni aspetto burocratico: dalla compilazione dei moduli alla prenotazione degli esami, fino alla trasmissione della documentazione agli enti competenti. Basta portare tutto il necessario ai nostri studi: **pensiamo a tutto noi**.
+
+---
+
+### Cosa gestiamo
+
+**Patenti di guida**
+
+Rinnovo e rilascio per tutte le categorie: A, B, C, D, E. Visita medica con medico abilitato in sede, accertamenti inclusi e pratiche gestite internamente.
+
+**Patente nautica**
+
+Certificazione medica per la conduzione di natanti e imbarcazioni, con visita e documentazione complete in un unico appuntamento.
+
+**Porto d'armi**
+
+Rilascio e rinnovo del certificato di idoneità psicofisica, con medico in sede e supporto completo nella gestione delle pratiche amministrative.
+
+---
+
+### Come funziona
+
+Il servizio è pensato per essere rapido e senza intoppi:
+
+- Visita medica con medico abilitato direttamente in sede
+- Esecuzione degli accertamenti previsti dalla normativa
+- Compilazione e invio della documentazione agli enti competenti
+- Collaborazione con le autorità per ridurre al minimo i tempi di attesa
+- Supporto personalizzato in ogni fase della pratica`,
     icon: IdCard,
     color: 'bg-natural-accent/10 text-natural-accent',
-    details: ['Patenti Auto', 'Patenti Nautiche', 'Porto d\'Armi'],
+    details: ['Patenti Auto A/B/C/D/E', 'Patenti Nautiche', 'Porto d\'Armi'],
     faq: [
-      { question: 'Cosa occorre portare per il rinnovo della patente?', answer: 'Serve la patente in scadenza, un documento di identità valido, il codice fiscale e una fototessera recente (spesso si fa in sede digitale).' },
-      { question: 'I tempi per l\'arrivo della nuova patente?', answer: 'Una volta superata la visita, ti rilasciamo un certificato sostitutivo valido per la guida, e la nuova patente arriva a casa tramite posta assicurata generalmente in pochi giorni.' }
+      {
+        question: 'Cosa devo portare per il rinnovo della patente?',
+        answer: 'Patente in scadenza o scaduta, documento di identità valido, codice fiscale e una fototessera recente. In molti casi la foto digitale si acquisisce direttamente in sede. Contattaci per confermare la documentazione specifica per la tua categoria.'
+      },
+      {
+        question: 'Quanto tempo ci vuole per ricevere la nuova patente?',
+        answer: 'Al termine della visita rilasciamo un certificato sostitutivo valido per la guida. La nuova patente viene recapitata a domicilio tramite posta assicurata, generalmente entro pochi giorni lavorativi.'
+      },
+      {
+        question: 'Gestite anche il primo rilascio, non solo il rinnovo?',
+        answer: 'Sì, ci occupiamo sia del primo rilascio che del rinnovo per tutte le categorie di patente, per la patente nautica e per il porto d\'armi. Contattaci per verificare i documenti necessari in base al tipo di pratica.'
+      },
+      {
+        question: 'Cosa serve per il certificato di idoneità al porto d\'armi?',
+        answer: 'È necessaria una visita medica con accertamento dell\'idoneità psicofisica. Il medico in sede redige il certificato richiesto dalle autorità. Porta documento di identità e, se disponibile, la licenza o il decreto da rinnovare.'
+      },
+      {
+        question: 'Posso fare più pratiche nello stesso appuntamento?',
+        answer: 'In molti casi sì. Contattaci anticipatamente così organizziamo un unico appuntamento che copra tutte le pratiche di cui hai bisogno, ottimizzando i tempi.'
+      }
     ]
   },
   {
