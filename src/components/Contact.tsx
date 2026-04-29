@@ -26,34 +26,24 @@ export default function Contact() {
                   <MapPin size={28} />
                 </div>
                 <div>
-                  <h4 className="text-sm uppercase tracking-widest font-bold text-natural-muted mb-1">Studi Medici Toscana - Pisa</h4>
-                  <p className="text-xl font-medium text-natural-text mb-1">Via Roma, 45 (Indirizzo indicativo)</p>
-                  <p className="text-sm text-natural-text">+39 050 123 4567</p>
+                  <h4 className="text-sm uppercase tracking-widest font-bold text-natural-muted mb-1">Studi Medici Toscana — Pisa</h4>
+                  <p className="text-xl font-medium text-natural-text mb-1">Viale Antonio Gramsci 3, 56125 Pisa (PI)</p>
+                  <p className="text-sm text-natural-text font-medium">Tel. <a href="tel:3497256208">349 725 6208</a></p>
+                  <p className="text-sm text-natural-muted">Lun–Ven 9:00–19:00 · Sab 9:00–13:00</p>
                 </div>
               </div>
 
-              {/* Sede Grosseto Principale */}
+              {/* Sede Grosseto */}
               <div className="flex items-start gap-6 group">
                 <div className="w-14 h-14 bg-natural-accent/5 rounded-2xl flex items-center justify-center text-natural-accent shrink-0 transition-colors group-hover:bg-natural-accent group-hover:text-white">
                   <MapPin size={28} />
                 </div>
                 <div>
-                  <h4 className="text-sm uppercase tracking-widest font-bold text-natural-muted mb-1">Studi Medici Toscana - Grosseto</h4>
-                  <p className="text-xl font-medium text-natural-text mb-1">Via Adriatico 7</p>
-                  <p className="text-sm text-natural-muted">Centro visite specialistiche, patenti, medicina legale.</p>
-                </div>
-              </div>
-
-              {/* Sede Grosseto Succursale */}
-              <div className="flex items-start gap-6 group">
-                <div className="w-14 h-14 bg-natural-accent/5 rounded-2xl flex items-center justify-center text-natural-accent shrink-0 transition-colors group-hover:bg-natural-accent group-hover:text-white">
-                  <MapPin size={28} />
-                </div>
-                <div>
-                  <h4 className="text-sm uppercase tracking-widest font-bold text-natural-muted mb-1">Succursale di Grosseto</h4>
-                  <p className="text-xl font-medium text-natural-text">Via Senegal 33, 58100 Grosseto</p>
-                  <p className="text-sm text-natural-text font-medium mt-1">Tel. <a href="tel:3713725768">371 372 5768</a></p>
+                  <h4 className="text-sm uppercase tracking-widest font-bold text-natural-muted mb-1">Studi Medici Toscana — Grosseto</h4>
+                  <p className="text-xl font-medium text-natural-text mb-1">Via Senegal 33, 58100 Grosseto (GR)</p>
+                  <p className="text-sm text-natural-text font-medium">Tel. <a href="tel:3713725768">371 372 5768</a></p>
                   <p className="text-sm text-natural-muted break-all">studimedicitoscana.grosseto.19@gmail.com</p>
+                  <p className="text-sm text-natural-muted">Lun–Ven 9:00–18:00</p>
                 </div>
               </div>
             </div>
