@@ -306,8 +306,8 @@ export default function Footer() {
             <SedeCard
               badge="Succursale"
               city="Grosseto"
-              mapsUrl="https://maps.google.com/?q=Via+Senegal+33+Grosseto"
-              address={<>Via Senegal 33<br />58100 Grosseto (GR)</>}
+              mapsUrl="https://maps.google.com/?q=Via+Adriatico+7+58100+Grosseto"
+              address={<>Via Adriatico 7<br />58100 Grosseto (GR)</>}
               phone="371 372 5768"
               phoneHref="tel:3713725768"
               email="studimedicitoscana.grosseto.19@gmail.com"

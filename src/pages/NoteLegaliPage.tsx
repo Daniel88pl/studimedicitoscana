@@ -15,7 +15,7 @@ export default function NoteLegaliPage() {
               <p><strong>Denominazione:</strong> Studi Medici Toscana</p>
               <p><strong>Partita IVA:</strong> 01400870471</p>
               <p><strong>Sede principale:</strong> Viale Antonio Gramsci 3, 56125 Pisa (PI)</p>
-              <p><strong>Succursale:</strong> Via Senegal 33, 58100 Grosseto (GR)</p>
+              <p><strong>Succursale:</strong> Via Adriatico 7, 58100 Grosseto (GR)</p>
               <p><strong>Telefono Pisa:</strong> 349 725 6208</p>
               <p><strong>Telefono Grosseto:</strong> 371 372 5768</p>
               <p>

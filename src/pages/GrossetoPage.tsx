@@ -37,7 +37,7 @@ export default function GrossetoPage() {
                   </div>
                   <div>
                     <strong className="block text-natural-text font-medium mb-1">Indirizzo</strong>
-                    <span className="text-natural-text/80">Via Roma 123, 58100 Grosseto (GR)</span>
+                    <span className="text-natural-text/80">Via Adriatico 7, 58100 Grosseto (GR)</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
