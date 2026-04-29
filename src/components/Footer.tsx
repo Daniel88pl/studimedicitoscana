@@ -111,15 +111,16 @@ const NavItem = ({ href, label, isRoute }: { href: string; label: string; isRout
   );
 };
 
+type Phone = { label: string; href: string };
+
 const SedeCard = ({
-  badge, city, mapsUrl, address, phone, phoneHref, email, hours,
+  badge, city, mapsUrl, address, phones, email, hours,
 }: {
   badge: string;
   city: string;
   mapsUrl: string;
   address: React.ReactNode;
-  phone: string;
-  phoneHref: string;
+  phones: Phone[];
   email?: string;
   hours: string;
 }) => (
@@ -149,11 +150,15 @@ const SedeCard = ({
         <span className="mt-0.5 shrink-0"><PinIcon /></span>
         <span>{address}</span>
       </div>
-      <a href={phoneHref}
-        className="flex items-center gap-[9px] font-medium no-underline tabular-nums"
-        style={{ color: SAGE_DARK }}>
-        <span className="shrink-0"><PhoneIcon /></span>{phone}
-      </a>
+      <div className="flex flex-col gap-1">
+        {phones.map((p) => (
+          <a key={p.href} href={p.href}
+            className="flex items-center gap-[9px] font-medium no-underline tabular-nums"
+            style={{ color: SAGE_DARK }}>
+            <span className="shrink-0"><PhoneIcon /></span>{p.label}
+          </a>
+        ))}
+      </div>
       {email && (
         <a href={`mailto:${email}`}
           className="flex items-center gap-[9px] no-underline break-all"
@@ -299,8 +304,10 @@ export default function Footer() {
               city="Pisa"
               mapsUrl="https://maps.google.com/?q=Viale+Antonio+Gramsci+3+Pisa"
               address={<>Viale Antonio Gramsci 3<br />56125 Pisa (PI)</>}
-              phone="349 725 6208"
-              phoneHref="tel:3497256208"
+              phones={[
+                { label: '050 520 1928', href: 'tel:0505201928' },
+                { label: '349 725 6208', href: 'tel:3497256208' },
+              ]}
               hours="Lun–Ven 9:00–19:00 · Sab 9:00–13:00"
             />
             <SedeCard
@@ -308,8 +315,10 @@ export default function Footer() {
               city="Grosseto"
               mapsUrl="https://maps.google.com/?q=Via+Adriatico+7+58100+Grosseto"
               address={<>Via Adriatico 7<br />58100 Grosseto (GR)</>}
-              phone="371 372 5768"
-              phoneHref="tel:3713725768"
+              phones={[
+                { label: '0564 189 8037', href: 'tel:05641898037' },
+                { label: '371 372 5768', href: 'tel:3713725768' },
+              ]}
               email="studimedicitoscana.grosseto.19@gmail.com"
               hours="Lun–Ven 9:00–18:00"
             />

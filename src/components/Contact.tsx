@@ -28,7 +28,7 @@ export default function Contact() {
                 <div>
                   <h4 className="text-sm uppercase tracking-widest font-bold text-natural-muted mb-1">Studi Medici Toscana — Pisa</h4>
                   <p className="text-xl font-medium text-natural-text mb-1">Viale Antonio Gramsci 3, 56125 Pisa (PI)</p>
-                  <p className="text-sm text-natural-text font-medium">Tel. <a href="tel:3497256208">349 725 6208</a></p>
+                  <p className="text-sm text-natural-text font-medium">Tel. <a href="tel:0505201928">050 520 1928</a> · <a href="tel:3497256208">349 725 6208</a></p>
                   <p className="text-sm text-natural-muted">Lun–Ven 9:00–19:00 · Sab 9:00–13:00</p>
                 </div>
               </div>
@@ -41,7 +41,7 @@ export default function Contact() {
                 <div>
                   <h4 className="text-sm uppercase tracking-widest font-bold text-natural-muted mb-1">Studi Medici Toscana — Grosseto</h4>
                   <p className="text-xl font-medium text-natural-text mb-1">Via Adriatico 7, 58100 Grosseto (GR)</p>
-                  <p className="text-sm text-natural-text font-medium">Tel. <a href="tel:3713725768">371 372 5768</a></p>
+                  <p className="text-sm text-natural-text font-medium">Tel. <a href="tel:05641898037">0564 189 8037</a> · <a href="tel:3713725768">371 372 5768</a></p>
                   <p className="text-sm text-natural-muted break-all">studimedicitoscana.grosseto.19@gmail.com</p>
                   <p className="text-sm text-natural-muted">Lun–Ven 9:00–18:00</p>
                 </div>

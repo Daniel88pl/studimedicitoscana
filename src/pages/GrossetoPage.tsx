@@ -46,9 +46,14 @@ export default function GrossetoPage() {
                   </div>
                   <div>
                     <strong className="block text-natural-text font-medium mb-1">Telefono</strong>
-                    <a href={`tel:${CONTACT.phone.replace(/\s+/g, '')}`} className="text-natural-text/80 hover:text-natural-accent transition-colors">
-                      {CONTACT.phone}
-                    </a>
+                    <div className="flex flex-col gap-1">
+                      <a href="tel:05641898037" className="text-natural-text/80 hover:text-natural-accent transition-colors">
+                        0564 189 8037
+                      </a>
+                      <a href="tel:3713725768" className="text-natural-text/80 hover:text-natural-accent transition-colors">
+                        371 372 5768
+                      </a>
+                    </div>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
