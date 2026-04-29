@@ -220,15 +220,14 @@ export default function Footer() {
               tuo servizio.
             </p>
             <div className="mt-5 flex gap-2">
-              <a href="#" aria-label="Facebook"
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-white"
+              <a
+                href="https://www.facebook.com/studimedicitoscanapisa"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-white transition-transform hover:scale-110"
                 style={{ border: '0.5px solid rgba(31,36,32,0.1)' }}>
                 <FacebookIcon />
-              </a>
-              <a href="#" aria-label="Instagram"
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-white"
-                style={{ border: '0.5px solid rgba(31,36,32,0.1)' }}>
-                <InstagramIcon />
               </a>
             </div>
           </div>
