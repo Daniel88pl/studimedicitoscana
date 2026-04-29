@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail } from 'lucide-react';
 
 const SERVICES = [
   { label: 'Servizi ambulatoriali', href: '/servizi/servizi-ambulatorio' },
@@ -12,158 +11,343 @@ const SERVICES = [
 const LINKS = [
   { label: 'Chi siamo', href: '/#chi-siamo' },
   { label: 'I nostri specialisti', href: '/#specialisti' },
-  { label: 'Succursale Grosseto', href: '/grosseto' },
+  { label: 'Succursale Grosseto', href: '/grosseto', isRoute: true },
   { label: 'Contatti', href: '/#contatti' },
   { label: 'Prenota una visita', href: '/#contatti' },
 ];
 
-const SEDI = [
-  {
-    name: 'Studi Medici Toscana – Pisa',
-    address: 'Viale Antonio Gramsci 3, 56125 Pisa',
-    phone: '349 725 6208',
-    phoneHref: 'tel:3497256208',
-  },
-  {
-    name: 'Studi Medici Toscana – Grosseto',
-    address: 'Via Senegal 33, 58100 Grosseto',
-    phone: '371 372 5768',
-    phoneHref: 'tel:3713725768',
-    email: 'studimedicitoscana.grosseto.19@gmail.com',
-  },
+const LEGAL = [
+  { label: 'Privacy', href: '#' },
+  { label: 'Cookie', href: '#' },
+  { label: 'Termini', href: '#' },
+  { label: 'Note legali', href: '#' },
 ];
+
+const SAGE = '#5b7560';
+const SAGE_DARK = '#3e5544';
+const INK = '#1f2420';
+
+const ArrowIcon = ({ stroke = SAGE_DARK }: { stroke?: string }) => (
+  <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke={stroke}
+    strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 8h10M9 4l4 4-4 4" />
+  </svg>
+);
+
+const PinIcon = () => (
+  <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke={SAGE} strokeWidth="1.4">
+    <path d="M8 14.5c3-3.5 4.5-6 4.5-8a4.5 4.5 0 1 0-9 0c0 2 1.5 4.5 4.5 8z" />
+    <circle cx="8" cy="6.5" r="1.6" />
+  </svg>
+);
+
+const PhoneIcon = ({ stroke = SAGE }: { stroke?: string }) => (
+  <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke={stroke}
+    strokeWidth="1.4" strokeLinejoin="round" strokeLinecap="round">
+    <path d="M3 3.5c0 5 4.5 9.5 9.5 9.5l1-2.5-3-1-1 1.2C7.8 9.7 6.3 8.2 5.3 6.5l1.2-1-1-3z" />
+  </svg>
+);
+
+const MailIcon = () => (
+  <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke={SAGE} strokeWidth="1.4" strokeLinejoin="round">
+    <rect x="2" y="3.5" width="12" height="9" rx="1.5" />
+    <path d="M2.5 4.5l5.5 4 5.5-4" />
+  </svg>
+);
+
+const ClockIcon = () => (
+  <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke={SAGE} strokeWidth="1.4" strokeLinecap="round">
+    <circle cx="8" cy="8" r="5.5" />
+    <path d="M8 5v3.2l2 1.3" />
+  </svg>
+);
+
+const FacebookIcon = () => (
+  <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke={SAGE} strokeWidth="1.3">
+    <circle cx="8" cy="8" r="6.5" />
+    <path d="M9.5 5.5h-1c-.6 0-1 .4-1 1V8m-1 0h3M8 8v4.5" strokeLinecap="round" />
+  </svg>
+);
+
+const InstagramIcon = () => (
+  <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke={SAGE} strokeWidth="1.3">
+    <rect x="2.5" y="2.5" width="11" height="11" rx="3" />
+    <circle cx="8" cy="8" r="2.5" />
+    <circle cx="11.2" cy="4.8" r="0.5" fill={SAGE} />
+  </svg>
+);
+
+// Reusable section heading: "— LABEL"
+const SectionLabel = ({ children }: { children: React.ReactNode }) => (
+  <p className="flex items-center gap-2 mb-[18px] text-[10px] font-semibold uppercase"
+    style={{ letterSpacing: '0.18em', color: SAGE }}>
+    <span className="inline-block w-[18px] h-px" style={{ background: SAGE }} />
+    {children}
+  </p>
+);
+
+// Animated link with sliding underline
+const NavItem = ({ href, label, isRoute }: { href: string; label: string; isRoute?: boolean }) => {
+  const className =
+    "group flex items-center gap-2 py-[5px] text-[13.5px] no-underline transition-all duration-150 hover:gap-3";
+  const style = { color: 'rgba(31,36,32,0.62)', letterSpacing: '-0.005em' };
+  const inner = (
+    <>
+      <span
+        className="inline-block h-px w-0 transition-all duration-200 group-hover:w-3"
+        style={{ background: SAGE }}
+      />
+      <span className="transition-transform duration-150 group-hover:translate-x-0.5"
+        style={{ color: 'inherit' }}>
+        {label}
+      </span>
+    </>
+  );
+  return isRoute ? (
+    <Link to={href} className={className} style={style}
+      onMouseEnter={(e) => (e.currentTarget.style.color = INK)}
+      onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(31,36,32,0.62)')}>
+      {inner}
+    </Link>
+  ) : (
+    <a href={href} className={className} style={style}
+      onMouseEnter={(e) => (e.currentTarget.style.color = INK)}
+      onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(31,36,32,0.62)')}>
+      {inner}
+    </a>
+  );
+};
+
+const SedeCard = ({
+  badge, city, mapsUrl, address, phone, phoneHref, email, hours,
+}: {
+  badge: string;
+  city: string;
+  mapsUrl: string;
+  address: React.ReactNode;
+  phone: string;
+  phoneHref: string;
+  email?: string;
+  hours: string;
+}) => (
+  <div className="flex flex-col gap-[14px] rounded-[14px] bg-white px-6 py-[22px]"
+    style={{ border: '0.5px solid rgba(31,36,32,0.1)' }}>
+    <div className="flex items-center justify-between gap-3">
+      <div>
+        <div className="mb-1.5 text-[10px] font-semibold uppercase"
+          style={{ letterSpacing: '0.18em', color: SAGE }}>
+          {badge}
+        </div>
+        <h4 className="text-base font-semibold" style={{ color: INK, letterSpacing: '-0.01em' }}>
+          {city}
+        </h4>
+      </div>
+      <a href={mapsUrl} target="_blank" rel="noopener"
+        className="flex items-center gap-1 whitespace-nowrap rounded-full px-[9px] py-[5px] text-[11px] font-medium no-underline"
+        style={{
+          color: 'rgba(31,36,32,0.62)',
+          border: '0.5px solid rgba(31,36,32,0.1)',
+        }}>
+        Mappa <ArrowIcon stroke="rgba(31,36,32,0.62)" />
+      </a>
+    </div>
+    <div className="flex flex-col gap-2 text-[13px] leading-[1.5]">
+      <div className="flex items-start gap-[9px]" style={{ color: 'rgba(31,36,32,0.62)' }}>
+        <span className="mt-0.5 shrink-0"><PinIcon /></span>
+        <span>{address}</span>
+      </div>
+      <a href={phoneHref}
+        className="flex items-center gap-[9px] font-medium no-underline tabular-nums"
+        style={{ color: SAGE_DARK }}>
+        <span className="shrink-0"><PhoneIcon /></span>{phone}
+      </a>
+      {email && (
+        <a href={`mailto:${email}`}
+          className="flex items-center gap-[9px] no-underline break-all"
+          style={{ color: 'rgba(31,36,32,0.62)' }}>
+          <span className="mt-0.5 shrink-0"><MailIcon /></span>{email}
+        </a>
+      )}
+      <div className="flex items-start gap-[9px] text-[12.5px]"
+        style={{ color: 'rgba(31,36,32,0.42)' }}>
+        <span className="mt-0.5 shrink-0"><ClockIcon /></span>
+        <span>{hours}</span>
+      </div>
+    </div>
+  </div>
+);
 
 export default function Footer() {
   return (
-    <footer className="bg-natural-accent text-natural-bg">
-
-      {/* ── Top section: logo + servizi + link utili ── */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-14 pb-10 grid grid-cols-1 md:grid-cols-3 gap-12">
-
-        {/* Logo + descrizione */}
-        <div>
-          <Link to="/" className="flex items-center gap-3 mb-5">
-            <div className="w-9 h-9 rounded-full bg-natural-bg/15 flex items-center justify-center shrink-0">
-              <span className="font-serif italic text-natural-bg text-lg">M</span>
-            </div>
-            <span className="font-serif italic text-natural-bg text-lg leading-tight">
-              Studi Medici Toscana
-            </span>
-          </Link>
-          <p className="text-sm text-natural-bg/60 leading-relaxed max-w-xs">
-            Struttura sanitaria privata con sedi a Pisa e Grosseto. Visite specialistiche,
-            medicina del lavoro, medicina legale e rinnovo patente — un'équipe multidisciplinare
-            al tuo servizio.
-          </p>
-        </div>
-
-        {/* Servizi */}
-        <div>
-          <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-natural-bg/40 mb-4">
-            I nostri servizi
-          </p>
-          <ul className="space-y-2">
-            {SERVICES.map((s) => (
-              <li key={s.href}>
-                <Link
-                  to={s.href}
-                  className="text-sm text-natural-bg/70 hover:text-natural-bg transition-colors"
-                >
-                  {s.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Link utili */}
-        <div>
-          <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-natural-bg/40 mb-4">
-            Link utili
-          </p>
-          <ul className="space-y-2">
-            {LINKS.map((l) => (
-              <li key={l.label}>
-                {l.href.startsWith('/') && !l.href.includes('#') ? (
-                  <Link
-                    to={l.href}
-                    className="text-sm text-natural-bg/70 hover:text-natural-bg transition-colors"
-                  >
-                    {l.label}
-                  </Link>
-                ) : (
-                  <a
-                    href={l.href}
-                    className="text-sm text-natural-bg/70 hover:text-natural-bg transition-colors"
-                  >
-                    {l.label}
-                  </a>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Divisore ── */}
-      <div className="border-t border-natural-bg/10 mx-6 lg:mx-8" />
-
-      {/* ── Sedi ── */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10">
-        <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-natural-bg/40 text-center mb-7">
-          Le nostre sedi
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {SEDI.map((sede) => (
-            <div
-              key={sede.name}
-              className="border border-natural-bg/15 rounded-2xl px-7 py-6 space-y-3"
-            >
-              <p className="text-sm font-bold text-natural-bg tracking-wide">
-                {sede.name}
-              </p>
-              <div className="space-y-2">
-                <div className="flex items-start gap-2 text-natural-bg/60">
-                  <MapPin size={14} className="shrink-0 mt-0.5" />
-                  <span className="text-xs leading-relaxed">{sede.address}</span>
+    <footer
+      className="w-full text-[14px]"
+      style={{
+        background: '#f7f6f1',
+        color: INK,
+        borderTop: '0.5px solid rgba(31,36,32,0.1)',
+        fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif',
+      }}
+    >
+      <div className="mx-auto max-w-[1280px]">
+        {/* ── Top grid ── */}
+        <div className="grid grid-cols-1 gap-12 px-6 pt-14 pb-11 md:grid-cols-2 md:px-12 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
+          {/* Brand */}
+          <div>
+            <div className="mb-[18px] flex items-center gap-[14px]">
+              <div className="relative flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full"
+                style={{ border: `1px solid ${SAGE}`, background: 'transparent' }}>
+                <span className="text-[13px] font-semibold" style={{ letterSpacing: '0.06em', color: INK }}>
+                  SMT
+                </span>
+                <span className="absolute rounded-full"
+                  style={{ inset: '-4px', border: `0.5px dashed ${SAGE}`, opacity: 0.35 }} />
+              </div>
+              <div>
+                <div className="text-[15px] font-semibold leading-[1.2]"
+                  style={{ color: INK, letterSpacing: '-0.01em' }}>
+                  Studi Medici Toscana
                 </div>
-                <div className="flex items-center gap-2 text-natural-bg/60">
-                  <Phone size={14} className="shrink-0" />
-                  <a
-                    href={sede.phoneHref}
-                    className="text-xs hover:text-natural-bg transition-colors"
-                  >
-                    {sede.phone}
-                  </a>
+                <div className="mt-[3px] text-[11px] uppercase"
+                  style={{ color: 'rgba(31,36,32,0.42)', letterSpacing: '0.08em' }}>
+                  Struttura sanitaria privata
                 </div>
-                {sede.email && (
-                  <div className="flex items-center gap-2 text-natural-bg/60">
-                    <Mail size={14} className="shrink-0" />
-                    <a
-                      href={`mailto:${sede.email}`}
-                      className="text-xs hover:text-natural-bg transition-colors break-all"
-                    >
-                      {sede.email}
-                    </a>
-                  </div>
-                )}
               </div>
             </div>
-          ))}
+            <p className="max-w-[320px] text-[13.5px] leading-[1.65]"
+              style={{ color: 'rgba(31,36,32,0.62)', letterSpacing: '-0.005em' }}>
+              Sedi a Pisa e Grosseto. Visite specialistiche, medicina del lavoro,
+              medicina legale e rinnovo patente — un'équipe multidisciplinare al
+              tuo servizio.
+            </p>
+            <div className="mt-5 flex gap-2">
+              <a href="#" aria-label="Facebook"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-white"
+                style={{ border: '0.5px solid rgba(31,36,32,0.1)' }}>
+                <FacebookIcon />
+              </a>
+              <a href="#" aria-label="Instagram"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-white"
+                style={{ border: '0.5px solid rgba(31,36,32,0.1)' }}>
+                <InstagramIcon />
+              </a>
+            </div>
+          </div>
+
+          {/* Servizi */}
+          <div>
+            <SectionLabel>I nostri servizi</SectionLabel>
+            <nav className="flex flex-col">
+              {SERVICES.map((s) => (
+                <NavItem key={s.href} href={s.href} label={s.label} isRoute />
+              ))}
+            </nav>
+          </div>
+
+          {/* Link utili */}
+          <div>
+            <SectionLabel>Link utili</SectionLabel>
+            <nav className="flex flex-col">
+              {LINKS.map((l) => (
+                <NavItem key={l.label} href={l.href} label={l.label} isRoute={l.isRoute} />
+              ))}
+            </nav>
+          </div>
+
+          {/* CTA card */}
+          <div className="relative flex flex-col gap-4 overflow-hidden rounded-[14px] px-[26px] py-7 text-white"
+            style={{ background: SAGE }}>
+            <div className="absolute rounded-full"
+              style={{
+                right: '-30px', top: '-30px', width: 140, height: 140,
+                border: '1px dashed rgba(255,255,255,0.22)',
+              }} />
+            <div className="absolute rounded-full"
+              style={{
+                right: '-10px', top: '-10px', width: 100, height: 100,
+                border: '1px dashed rgba(255,255,255,0.18)',
+              }} />
+            <div className="text-[10px] font-semibold uppercase"
+              style={{ letterSpacing: '0.2em', color: 'rgba(255,255,255,0.7)' }}>
+              Prenota una visita
+            </div>
+            <p className="relative max-w-[240px] text-[18px] font-medium leading-[1.35] text-white"
+              style={{ letterSpacing: '-0.015em' }}>
+              Fissa il tuo appuntamento con i nostri specialisti.
+            </p>
+            <div className="relative flex flex-col gap-2">
+              <a href="/#contatti"
+                className="inline-flex items-center justify-between rounded-full bg-white px-4 py-3 text-[13.5px] font-semibold no-underline"
+                style={{ color: SAGE_DARK, letterSpacing: '-0.005em' }}>
+                Prenota online <ArrowIcon stroke={SAGE_DARK} />
+              </a>
+              <a href="tel:3497256208"
+                className="inline-flex items-center gap-[9px] px-1 py-2.5 text-[13px] font-medium text-white no-underline">
+                <PhoneIcon stroke="#fff" /> 349 725 6208
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Sedi ── */}
+        <div className="px-6 py-9 md:px-12"
+          style={{ borderTop: '0.5px solid rgba(31,36,32,0.1)' }}>
+          <div className="mb-[22px] flex flex-wrap items-baseline justify-between gap-4">
+            <p className="flex items-center gap-2.5 text-[10px] font-semibold uppercase"
+              style={{ letterSpacing: '0.2em', color: SAGE }}>
+              <span className="inline-block h-px w-[18px]" style={{ background: SAGE }} />
+              Le nostre sedi
+            </p>
+            <span className="text-[12px]" style={{ color: 'rgba(31,36,32,0.42)' }}>
+              Aperto oggi · 9:00–19:00
+            </span>
+          </div>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            <SedeCard
+              badge="Sede principale"
+              city="Pisa"
+              mapsUrl="https://maps.google.com/?q=Viale+Antonio+Gramsci+3+Pisa"
+              address={<>Viale Antonio Gramsci 3<br />56125 Pisa (PI)</>}
+              phone="349 725 6208"
+              phoneHref="tel:3497256208"
+              hours="Lun–Ven 9:00–19:00 · Sab 9:00–13:00"
+            />
+            <SedeCard
+              badge="Succursale"
+              city="Grosseto"
+              mapsUrl="https://maps.google.com/?q=Via+Senegal+33+Grosseto"
+              address={<>Via Senegal 33<br />58100 Grosseto (GR)</>}
+              phone="371 372 5768"
+              phoneHref="tel:3713725768"
+              email="studimedicitoscana.grosseto.19@gmail.com"
+              hours="Lun–Ven 9:00–18:00"
+            />
+          </div>
+        </div>
+
+        {/* ── Bottom bar ── */}
+        <div className="flex flex-wrap items-center justify-between gap-4 px-6 py-[18px] text-[11.5px] md:px-12"
+          style={{
+            borderTop: '0.5px solid rgba(31,36,32,0.1)',
+            color: 'rgba(31,36,32,0.42)',
+            letterSpacing: '0.02em',
+          }}>
+          <div className="flex flex-wrap items-center gap-[18px]">
+            <span>© {new Date().getFullYear()} Studi Medici Toscana</span>
+            <span style={{ color: 'rgba(31,36,32,0.22)' }}>·</span>
+            <span>P.IVA 00000000000</span>
+            <span style={{ color: 'rgba(31,36,32,0.22)' }}>·</span>
+            <span>Direttore sanitario: Dr. [Nome]</span>
+          </div>
+          <div className="flex flex-wrap gap-4">
+            {LEGAL.map((l) => (
+              <a key={l.label} href={l.href} className="no-underline"
+                style={{ color: 'rgba(31,36,32,0.42)' }}>
+                {l.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
-
-      {/* ── Bottom bar ── */}
-      <div className="border-t border-natural-bg/10 mx-6 lg:mx-8" />
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <p className="text-[10px] uppercase tracking-widest text-natural-bg/35">
-          © {new Date().getFullYear()} Studi Medici Toscana – Tutti i diritti riservati
-        </p>
-        <p className="text-[10px] uppercase tracking-widest text-natural-bg/35">
-          Made with care for healthcare
-        </p>
-      </div>
-
     </footer>
   );
 }
