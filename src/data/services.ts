@@ -216,7 +216,7 @@ Porta la tua pratica presso i nostri studi: effettuiamo una **prima valutazione 
   },
   {
     id: 'patente-porto-armi',
-    title: 'Patente e porto d\'armi',
+    title: 'Rinnovo Patente e porto d\'armi',
     description: 'Rinnovo e rilascio di patenti auto, nautiche e certificazioni per porto d\'armi in sede.',
     longDescription: 'Servizio rapido e organizzato per il rinnovo delle patenti di guida (A, B, C, D, E), patenti nautiche e certificazioni per il porto d\'armi. Durante un unico appuntamento è possibile effettuare la visita medica in sede, accertamenti necessari e completare la pratica burocratica per il rilascio o il rinnovo.',
     icon: IdCard,
