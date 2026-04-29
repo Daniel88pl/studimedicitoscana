@@ -17,10 +17,10 @@ const LINKS = [
 ];
 
 const LEGAL = [
-  { label: 'Privacy', href: '#' },
-  { label: 'Cookie', href: '#' },
-  { label: 'Termini', href: '#' },
-  { label: 'Note legali', href: '#' },
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Cookie', href: '/cookie' },
+  { label: 'Termini', href: '/termini' },
+  { label: 'Note legali', href: '/note-legali' },
 ];
 
 const SAGE = '#5b7560';

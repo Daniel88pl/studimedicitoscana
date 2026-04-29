@@ -10,6 +10,10 @@ import ServiceDetail from "./pages/ServiceDetail";
 import DoctorDetail from "./pages/DoctorDetail";
 import GrossetoPage from "./pages/GrossetoPage";
 import MedicinaDelLavoroPage from "./pages/MedicinaDelLavoroPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import CookiePage from "./pages/CookiePage";
+import TerminiPage from "./pages/TerminiPage";
+import NoteLegaliPage from "./pages/NoteLegaliPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +32,10 @@ const App = () => (
             <Route path="/servizi/:id" element={<ServiceDetail />} />
             <Route path="/staff/:id" element={<DoctorDetail />} />
             <Route path="/grosseto" element={<GrossetoPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/cookie" element={<CookiePage />} />
+            <Route path="/termini" element={<TerminiPage />} />
+            <Route path="/note-legali" element={<NoteLegaliPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
