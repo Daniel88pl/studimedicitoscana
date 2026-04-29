@@ -69,13 +69,6 @@ const FacebookIcon = () => (
   </svg>
 );
 
-const InstagramIcon = () => (
-  <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke={SAGE} strokeWidth="1.3">
-    <rect x="2.5" y="2.5" width="11" height="11" rx="3" />
-    <circle cx="8" cy="8" r="2.5" />
-    <circle cx="11.2" cy="4.8" r="0.5" fill={SAGE} />
-  </svg>
-);
 
 // Reusable section heading: "— LABEL"
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
