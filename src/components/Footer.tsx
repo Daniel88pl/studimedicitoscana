@@ -17,10 +17,10 @@ const LINKS = [
 ];
 
 const LEGAL = [
-  { label: 'Privacy', href: '#' },
-  { label: 'Cookie', href: '#' },
-  { label: 'Termini', href: '#' },
-  { label: 'Note legali', href: '#' },
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Cookie', href: '/cookie' },
+  { label: 'Termini', href: '/termini' },
+  { label: 'Note legali', href: '/note-legali' },
 ];
 
 const SAGE = '#5b7560';
@@ -69,13 +69,6 @@ const FacebookIcon = () => (
   </svg>
 );
 
-const InstagramIcon = () => (
-  <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke={SAGE} strokeWidth="1.3">
-    <rect x="2.5" y="2.5" width="11" height="11" rx="3" />
-    <circle cx="8" cy="8" r="2.5" />
-    <circle cx="11.2" cy="4.8" r="0.5" fill={SAGE} />
-  </svg>
-);
 
 // Reusable section heading: "— LABEL"
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
@@ -220,15 +213,14 @@ export default function Footer() {
               tuo servizio.
             </p>
             <div className="mt-5 flex gap-2">
-              <a href="#" aria-label="Facebook"
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-white"
+              <a
+                href="https://www.facebook.com/studimedicitoscanapisa"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-white transition-transform hover:scale-110"
                 style={{ border: '0.5px solid rgba(31,36,32,0.1)' }}>
                 <FacebookIcon />
-              </a>
-              <a href="#" aria-label="Instagram"
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-white"
-                style={{ border: '0.5px solid rgba(31,36,32,0.1)' }}>
-                <InstagramIcon />
               </a>
             </div>
           </div>
@@ -334,16 +326,18 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-[18px]">
             <span>© {new Date().getFullYear()} Studi Medici Toscana</span>
             <span style={{ color: 'rgba(31,36,32,0.22)' }}>·</span>
-            <span>P.IVA 00000000000</span>
-            <span style={{ color: 'rgba(31,36,32,0.22)' }}>·</span>
-            <span>Direttore sanitario: Dr. [Nome]</span>
+            <span>P.IVA 01400870471</span>
           </div>
           <div className="flex flex-wrap gap-4">
             {LEGAL.map((l) => (
-              <a key={l.label} href={l.href} className="no-underline"
-                style={{ color: 'rgba(31,36,32,0.42)' }}>
+              <Link
+                key={l.label}
+                to={l.href}
+                className="no-underline transition-colors hover:text-[#1f2420]"
+                style={{ color: 'rgba(31,36,32,0.42)' }}
+              >
                 {l.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
