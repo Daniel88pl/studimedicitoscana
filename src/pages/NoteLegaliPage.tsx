@@ -16,8 +16,8 @@ export default function NoteLegaliPage() {
               <p><strong>Partita IVA:</strong> 01400870471</p>
               <p><strong>Sede principale:</strong> Viale Antonio Gramsci 3, 56125 Pisa (PI)</p>
               <p><strong>Succursale:</strong> Via Adriatico 7, 58100 Grosseto (GR)</p>
-              <p><strong>Telefono Pisa:</strong> 349 725 6208</p>
-              <p><strong>Telefono Grosseto:</strong> 371 372 5768</p>
+              <p><strong>Telefono Pisa:</strong> 050 520 1928 · 349 725 6208</p>
+              <p><strong>Telefono Grosseto:</strong> 0564 189 8037 · 371 372 5768</p>
               <p>
                 <strong>Email:</strong>{' '}
                 <a href="mailto:studimedicitoscana.grosseto.19@gmail.com" className="text-natural-accent underline">
