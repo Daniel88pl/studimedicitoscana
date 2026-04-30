@@ -19,7 +19,13 @@ export default function NoteLegaliPage() {
               <p><strong>Telefono Pisa:</strong> 050 520 1928 · 349 725 6208</p>
               <p><strong>Telefono Grosseto:</strong> 0564 189 8037 · 371 372 5768</p>
               <p>
-                <strong>Email:</strong>{' '}
+                <strong>Email Pisa:</strong>{' '}
+                <a href="mailto:studimedici.giovanna.pisa@gmail.com" className="text-natural-accent underline">
+                  studimedici.giovanna.pisa@gmail.com
+                </a>
+              </p>
+              <p>
+                <strong>Email Grosseto:</strong>{' '}
                 <a href="mailto:studimedicitoscana.grosseto.19@gmail.com" className="text-natural-accent underline">
                   studimedicitoscana.grosseto.19@gmail.com
                 </a>
