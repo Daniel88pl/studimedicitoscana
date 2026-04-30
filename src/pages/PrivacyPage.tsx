@@ -18,9 +18,12 @@ export default function PrivacyPage() {
               </p>
               <p>
                 Per qualsiasi richiesta inerente il trattamento dei tuoi dati puoi scrivere a{' '}
+                <a href="mailto:studimedici.giovanna.pisa@gmail.com" className="text-natural-accent underline">
+                  studimedici.giovanna.pisa@gmail.com
+                </a>{' '}(sede di Pisa) o{' '}
                 <a href="mailto:studimedicitoscana.grosseto.19@gmail.com" className="text-natural-accent underline">
                   studimedicitoscana.grosseto.19@gmail.com
-                </a>.
+                </a>{' '}(sede di Grosseto).
               </p>
             </>
           ),
