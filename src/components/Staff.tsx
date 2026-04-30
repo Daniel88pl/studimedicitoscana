@@ -54,30 +54,33 @@ export default function Staff() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: -20 }}
                 transition={{ duration: 0.4 }}
-                className="h-full bg-white border border-natural-card-border p-8 rounded-[32px] hover:shadow-xl transition-all shadow-sm flex flex-col group"
+                className="h-full bg-white border border-natural-card-border px-6 py-5 rounded-[32px] hover:shadow-xl transition-all shadow-sm flex flex-col group"
               >
-                <div className="flex items-center gap-5 mb-6 pb-6 border-b border-natural-border">
+                <div className="flex items-center gap-3 mb-2.5 pb-2.5 border-b border-natural-border">
                   <img
                     src={doctor.image}
                     alt={doctor.name}
-                    className="w-20 h-20 rounded-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
+                    className="w-10 h-10 rounded-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 shrink-0"
                     referrerPolicy="no-referrer"
                   />
-                  <div>
-                    <p className="text-[10px] uppercase tracking-widest font-bold text-natural-muted mb-1">{doctor.category}</p>
-                    <h3 className="text-lg font-bold text-natural-text leading-tight">{doctor.name}</h3>
-                    <p className="font-serif italic text-natural-accent text-sm mt-1">{doctor.role}</p>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="text-base font-bold text-natural-text leading-tight">{doctor.name}</h3>
+                      <span className="inline-block text-[9px] uppercase tracking-widest font-bold text-natural-accent bg-natural-accent/10 px-2 py-0.5 rounded-full whitespace-nowrap">
+                        {doctor.category}
+                      </span>
+                    </div>
+                    <p className="font-serif italic text-natural-accent text-xs mt-0.5">{doctor.role}</p>
                   </div>
                 </div>
 
-                <div className="flex-1 flex flex-col gap-6">
+                <div className="flex-1 flex flex-col gap-2.5">
+                  <p className="text-sm text-natural-text/80 leading-snug border-l-2 border-natural-border pl-3">
+                    {doctor.formation.split('. ').slice(0, 2).join('. ').replace(/\.?$/, '.')}
+                  </p>
                   <div>
-                    <h4 className="text-[10px] uppercase tracking-widest font-bold text-natural-muted mb-2">Formazione & Profilo</h4>
-                    <p className="text-sm text-natural-text/80 leading-relaxed min-h-[60px]">{doctor.formation}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-[10px] uppercase tracking-widest font-bold text-natural-muted mb-2">Aree di Intervento</h4>
-                    <ul className="space-y-2">
+                    <h4 className="text-[10px] uppercase tracking-widest font-bold text-natural-muted mb-1.5">Aree di Intervento</h4>
+                    <ul className="space-y-1">
                       {doctor.treatments.slice(0, 3).map((treatment, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-natural-text/80">
                           <span className="w-1.5 h-1.5 rounded-full bg-natural-accent mt-1.5 shrink-0 opacity-70" />
@@ -88,24 +91,21 @@ export default function Staff() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-natural-border mt-auto flex flex-col gap-4">
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-natural-muted">
-                      <MapPin size={14} className="text-natural-accent" />
-                      {doctor.location}
-                    </div>
-                    <div className="flex items-center gap-2 text-xs font-semibold text-natural-muted">
-                      {doctor.contact.includes('@') ? (
-                         <Mail size={14} className="text-natural-accent" />
-                      ) : (
-                         <Phone size={14} className="text-natural-accent" />
-                      )}
-                      {doctor.contact}
-                    </div>
+                <div className="mt-3 pt-3 border-t border-natural-border mt-auto flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-natural-muted min-w-0 flex-1">
+                    <MapPin size={12} className="text-natural-accent shrink-0" />
+                    <span className="truncate">{doctor.location}</span>
+                    <span className="text-natural-accent">·</span>
+                    {doctor.contact.includes('@') ? (
+                      <Mail size={12} className="text-natural-accent shrink-0" />
+                    ) : (
+                      <Phone size={12} className="text-natural-accent shrink-0" />
+                    )}
+                    <span className="truncate">{doctor.contact}</span>
                   </div>
-                  <Link to={`/staff/${doctor.id}`} className="mt-2 inline-flex items-center justify-between bg-natural-bg px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-widest text-natural-text hover:bg-natural-accent hover:text-white transition-all">
-                    Profilo Completo
-                    <ChevronRight size={14} />
+                  <Link to={`/staff/${doctor.id}`} className="inline-flex items-center gap-1 bg-natural-bg px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-widest text-natural-text hover:bg-natural-accent hover:text-white transition-all shrink-0">
+                    Profilo
+                    <ChevronRight size={12} />
                   </Link>
                 </div>
               </motion.div>
