@@ -29,6 +29,7 @@ export default function Contact() {
                   <h4 className="text-sm uppercase tracking-widest font-bold text-natural-muted mb-1">Studi Medici Toscana — Pisa</h4>
                   <p className="text-xl font-medium text-natural-text mb-1">Viale Antonio Gramsci 3, 56125 Pisa (PI)</p>
                   <p className="text-sm text-natural-text font-medium">Tel. <a href="tel:0505201928">050 520 1928</a> · <a href="tel:3497256208">349 725 6208</a></p>
+                  <p className="text-sm text-natural-muted break-all">studimedici.giovanna.pisa@gmail.com</p>
                   <p className="text-sm text-natural-muted">Lun–Ven 9:00–19:00 · Sab 9:00–13:00</p>
                 </div>
               </div>
