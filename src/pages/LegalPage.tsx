@@ -61,12 +61,17 @@ export default function LegalPage({ title, updatedAt, intro, sections, metaDescr
           <p>
             Per qualsiasi domanda relativa a questa informativa puoi contattarci a{' '}
             <a
+              href="mailto:studimedici.giovanna.pisa@gmail.com"
+              className="text-natural-accent underline"
+            >
+              studimedici.giovanna.pisa@gmail.com
+            </a>{' '}(Pisa) o{' '}
+            <a
               href="mailto:studimedicitoscana.grosseto.19@gmail.com"
               className="text-natural-accent underline"
             >
               studimedicitoscana.grosseto.19@gmail.com
-            </a>{' '}
-            o telefonicamente al <a href="tel:3497256208" className="text-natural-accent underline">349 725 6208</a>.
+            </a>{' '}(Grosseto), o telefonicamente al <a href="tel:3497256208" className="text-natural-accent underline">349 725 6208</a>.
           </p>
           <p className="mt-3">
             <strong>Studi Medici Toscana</strong> — P.IVA 01400870471<br />
