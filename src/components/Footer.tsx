@@ -308,6 +308,7 @@ export default function Footer() {
                 { label: '050 520 1928', href: 'tel:0505201928' },
                 { label: '349 725 6208', href: 'tel:3497256208' },
               ]}
+              email="studimedici.giovanna.pisa@gmail.com"
               hours="Lun–Ven 9:00–19:00 · Sab 9:00–13:00"
             />
             <SedeCard
