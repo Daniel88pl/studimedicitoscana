@@ -16,49 +16,49 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
     .replace(/\.?$/, '.');
 
   return (
-    <div className="h-full bg-white border border-natural-card-border px-7 py-6 rounded-[32px] hover:shadow-xl transition-all shadow-sm flex flex-col group">
-      <div className="flex items-center gap-3 mb-3 pb-3 border-b border-natural-border">
+    <div className="h-full bg-white border border-natural-card-border px-9 py-8 rounded-[32px] hover:shadow-xl transition-all shadow-sm flex flex-col group">
+      <div className="flex items-center gap-4 mb-4 pb-4 border-b border-natural-border">
         <img
           src={doctor.image}
           alt={doctor.name}
-          className="w-12 h-12 rounded-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 shrink-0"
+          className="w-16 h-16 rounded-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 shrink-0"
           referrerPolicy="no-referrer"
         />
         <div className="min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <h3 className="text-[17px] font-bold text-natural-text leading-tight">{doctor.name}</h3>
-            <span className="inline-block text-[9px] uppercase tracking-widest font-bold text-natural-accent bg-natural-accent/10 px-2 py-0.5 rounded-full whitespace-nowrap">
+            <h3 className="text-[19px] font-bold text-natural-text leading-tight">{doctor.name}</h3>
+            <span className="inline-block text-[10px] uppercase tracking-widest font-bold text-natural-accent bg-natural-accent/10 px-2 py-0.5 rounded-full whitespace-nowrap">
               {doctor.category}
             </span>
           </div>
-          <p className="font-serif italic text-natural-accent text-xs mt-0.5">{doctor.role}</p>
+          <p className="font-serif italic text-natural-accent text-sm mt-1">{doctor.role}</p>
         </div>
       </div>
 
-      <div className="flex-1 flex flex-col gap-3">
-        <p className="text-sm text-natural-text/80 leading-snug border-l-2 border-natural-border pl-3">
+      <div className="flex-1 flex flex-col gap-4">
+        <p className="text-base text-natural-text/80 leading-relaxed border-l-2 border-natural-border pl-3">
           {trimmedFormation}
         </p>
         <div>
-          <h4 className="text-[10px] uppercase tracking-widest font-bold text-natural-muted mb-1.5">Aree di Intervento</h4>
-          <ul className="space-y-1">
+          <h4 className="text-[11px] uppercase tracking-widest font-bold text-natural-muted mb-2">Aree di Intervento</h4>
+          <ul className="space-y-1.5">
             {doctor.treatments.slice(0, 3).map((treatment, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-natural-text/80">
-                <span className="w-1.5 h-1.5 rounded-full bg-natural-accent mt-1.5 shrink-0 opacity-70" />
-                <span className="leading-tight">{treatment}</span>
+              <li key={i} className="flex items-start gap-2 text-base text-natural-text/80">
+                <span className="w-1.5 h-1.5 rounded-full bg-natural-accent mt-2 shrink-0 opacity-70" />
+                <span className="leading-snug">{treatment}</span>
               </li>
             ))}
           </ul>
         </div>
       </div>
 
-      <div className="mt-4 pt-4 border-t border-natural-border mt-auto">
+      <div className="mt-5 pt-5 border-t border-natural-border mt-auto">
         <Link
           to={`/staff/${doctor.id}`}
-          className="w-full inline-flex items-center justify-center gap-2 bg-natural-bg px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-widest text-natural-text hover:bg-natural-accent hover:text-white transition-all"
+          className="w-full inline-flex items-center justify-center gap-2 bg-natural-bg px-4 py-3.5 rounded-xl text-[13px] font-bold uppercase tracking-widest text-natural-text hover:bg-natural-accent hover:text-white transition-all"
         >
           Profilo Completo
-          <ChevronRight size={14} />
+          <ChevronRight size={16} />
         </Link>
       </div>
     </div>
