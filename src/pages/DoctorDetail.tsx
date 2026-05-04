@@ -72,7 +72,7 @@ export default function DoctorDetail() {
                 href={CONTACT.whatsappMessage(`visita con ${doctor.name}`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full bg-natural-accent text-white px-6 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-[#4a4a35] transition-colors gap-2 shadow-lg"
+                className="inline-flex items-center justify-center w-full bg-natural-accent text-white px-6 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-natural-accent/90 transition-colors gap-2 shadow-lg"
               >
                 <MessageCircle size={18} />
                 Prenota su WhatsApp

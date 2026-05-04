@@ -98,7 +98,7 @@ export default function Contact() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-natural-accent text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-widest shadow-xl shadow-natural-accent/10 hover:bg-[#4a4a35] transition-colors"
+                className="w-full bg-natural-accent text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-widest shadow-xl shadow-natural-accent/10 hover:bg-natural-accent/90 transition-colors"
               >
                 Invia Messaggio
                 <Send size={18} className="ml-2" />

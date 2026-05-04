@@ -53,7 +53,7 @@ export default function About() {
               </div>
             </div>
 
-            <button className="bg-natural-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-[#4a4a35] transition-colors shadow-lg shadow-natural-accent/10">
+            <button className="bg-natural-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-natural-accent/90 transition-colors shadow-lg shadow-natural-accent/10">
               Leggi la Nostra Storia
             </button>
           </motion.div>

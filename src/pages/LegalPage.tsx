@@ -23,7 +23,7 @@ export default function LegalPage({ title, updatedAt, intro, sections, metaDescr
   }, [title, metaDescription]);
 
   return (
-    <main className="min-h-screen pt-32 pb-20" style={{ background: '#f7f6f1' }}>
+    <main className="min-h-screen pt-32 pb-20 bg-secondary">
       <article className="mx-auto max-w-3xl px-6 lg:px-8">
         <Link
           to="/"

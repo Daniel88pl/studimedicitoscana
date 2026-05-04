@@ -42,7 +42,7 @@ export default function OccupationalMedicine() {
               ))}
             </ul>
 
-            <Link to="/servizi/medicina-del-lavoro" className="inline-flex items-center justify-center bg-natural-accent text-white px-8 py-3 rounded-full text-sm font-semibold hover:bg-[#4a4a35] transition-colors gap-2 shadow-lg shadow-natural-accent/10">
+            <Link to="/servizi/medicina-del-lavoro" className="inline-flex items-center justify-center bg-natural-accent text-white px-8 py-3 rounded-full text-sm font-semibold hover:bg-natural-accent/90 transition-colors gap-2 shadow-lg shadow-natural-accent/10">
               Richiedi informazioni
               <ChevronRight size={16} />
             </Link>
