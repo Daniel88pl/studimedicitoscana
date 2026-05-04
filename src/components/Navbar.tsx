@@ -3,6 +3,7 @@ import { Menu, X, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { CONTACT } from '../config/contact';
+import logo from '@/assets/logo.png';
 
 const NAV_LINKS = [
   { href: '/#servizi', label: 'Servizi' },
@@ -20,11 +21,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-natural-accent rounded-full flex items-center justify-center">
-              <span className="text-white font-serif text-xl italic">M</span>
-            </div>
-            <span className="text-xl font-medium tracking-tight font-serif italic text-natural-accent">
+          <Link to="/" className="flex items-center gap-3">
+            <img src={logo} alt="Studi Medici Toscana" className="h-11 w-11 object-contain" />
+            <span className="text-xl font-medium tracking-tight font-serif italic text-natural-accent hidden sm:inline">
               Studi Medici Toscana
             </span>
           </Link>
