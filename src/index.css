@@ -9,41 +9,41 @@
 
 @layer base {
   :root {
-    /* Natural / warm palette */
-    --background: 60 25% 99%;          /* #fdfdfb */
-    --foreground: 60 8% 23%;           /* #3d3d33 */
+    /* Premium Clinical palette — navy accent, ivory base */
+    --background: 210 30% 99%;
+    --foreground: 215 35% 18%;
 
-    --natural-bg: 60 25% 99%;          /* #fdfdfb */
-    --natural-text: 60 8% 23%;         /* #3d3d33 */
-    --natural-accent: 60 18% 30%;      /* #5a5a40 */
-    --natural-muted: 60 13% 49%;       /* #8d8d70 */
-    --natural-border: 60 16% 88%;      /* #e5e5dc */
-    --natural-card-border: 60 14% 93%; /* #f0f0eb */
+    --natural-bg: 210 30% 99%;
+    --natural-text: 215 35% 18%;
+    --natural-accent: 215 65% 32%;
+    --natural-muted: 215 15% 45%;
+    --natural-border: 215 20% 90%;
+    --natural-card-border: 210 25% 94%;
 
     --card: 0 0% 100%;
-    --card-foreground: 60 8% 23%;
+    --card-foreground: 215 35% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 60 8% 23%;
+    --popover-foreground: 215 35% 18%;
 
-    --primary: 60 18% 30%;
+    --primary: 215 65% 32%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 60 16% 95%;
-    --secondary-foreground: 60 8% 23%;
+    --secondary: 210 40% 97%;
+    --secondary-foreground: 215 35% 18%;
 
-    --muted: 60 16% 95%;
-    --muted-foreground: 60 13% 49%;
+    --muted: 210 40% 97%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 60 16% 95%;
-    --accent-foreground: 60 18% 30%;
+    --accent: 210 40% 97%;
+    --accent-foreground: 215 65% 32%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 60 16% 88%;
-    --input: 60 16% 88%;
-    --ring: 60 18% 30%;
+    --border: 215 20% 90%;
+    --input: 215 20% 90%;
+    --ring: 215 65% 32%;
 
     --radius: 0.5rem;
 
