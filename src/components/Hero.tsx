@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ShieldCheck, Clock, Award, MessageCircle, Mail } from 'lucide-react';
 import { CONTACT } from '../config/contact';
+import heroImage from '@/assets/hero-doctor.png';
 
 export default function Hero() {
   return (
