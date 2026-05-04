@@ -1,47 +1,41 @@
+## Obiettivo
 
-## Modifiche alle card specialisti
+Aggiornare la sezione Hero della homepage (`src/components/Hero.tsx`) sostituendo l'immagine attuale (foto Unsplash) con la nuova immagine della dottoressa allegata, e rimuovere la card fluttuante "Prenota in un click / Risposta Rapida".
 
-### 1. Footer card semplificato
-Rimuovere la riga "location · email" dalla parte bassa di ogni card. Lasciare solo il pulsante **PROFILO COMPLETO** (testo esteso, non più "Profilo"), centrato e largo full-width nella card. Le info di contatto restano comunque visibili nella pagina di dettaglio dello specialista.
+Mantenere intatti: stile, palette, font, layout split a 2 colonne, responsive behaviour, animazioni.
 
-### 2. Card leggermente più grandi
-Aumentare:
-- padding interno (da `px-6 py-5` a `px-7 py-6`)
-- avatar da 40px a 48px
-- nome da `text-base` a `text-[17px]`
-- testo profilo e aree intervento leggermente più arieggiati (gap interno +2px)
+## Modifiche
 
-L'obiettivo è una card che respiri di più ma resti compatta — niente ritorno alle dimensioni originali.
+### 1. Asset
+- Salvare l'immagine caricata in `src/assets/hero-doctor.png` (tramite `code--copy` da `user-uploads://image-3.png`).
+- Importarla nel componente come modulo ES6:  
+  `import heroImage from '@/assets/hero-doctor.png';`
 
-### 3. Carosello auto-scroll, max 3 per riga
+### 2. `src/components/Hero.tsx`
 
-Sostituire la griglia attuale (`grid md:grid-cols-2 xl:grid-cols-3`) con un carosello orizzontale che mostra **3 card visibili contemporaneamente** su desktop (2 su tablet, 1 su mobile) e scorre automaticamente in continuo verso sinistra.
+**Colonna destra — immagine:**
+- Sostituire il `<img src="https://images.unsplash.com/...">` con `<img src={heroImage}>`.
+- Aggiornare l'`alt` in qualcosa di pertinente (es. "Medico specialista Studi Medici Toscana").
+- Mantenere il container con `rounded-[40px]`, `shadow-2xl`, `border border-natural-border` e l'effetto `grayscale-[20%] hover:grayscale-0`.
+- Poiché l'immagine ha già uno sfondo bianco molto chiaro, valutare di rimuovere o ridurre il `grayscale` iniziale per non smorzare ulteriormente i toni (sfumatura: tengo un leggero `grayscale-[10%]` per coerenza con lo stile editoriale del sito).
+- Aggiungere `bg-natural-bg` al container immagine così lo sfondo bianco della foto si fonde armoniosamente con il colore di sezione.
 
-**Comportamento:**
-- Scroll automatico fluido e lento (~25-30 secondi per ciclo completo)
-- Loop infinito senza salti visibili (duplicazione della lista in coda)
-- Pausa al passaggio del mouse (hover) per permettere lettura
-- Frecce manuali ‹ › ai lati per navigazione opzionale
-- Quando un filtro categoria è attivo e ci sono ≤3 specialisti, il carosello si disattiva e mostra una griglia statica (così non scorre se non serve)
+**Card fluttuante:**
+- Rimuovere completamente il blocco `<motion.div>` "Prenota in un click / Risposta Rapida" (icona `ShieldCheck` inclusa, se non più usata altrove nel file).
+- Verificare gli import: `ShieldCheck` resta usato nelle stat in basso (`D.Lgs 81/2008`), quindi l'import rimane.
 
-**Tecnica:** uso di `embla-carousel-react` con il plugin `embla-carousel-autoplay`, già compatibile con shadcn/ui (la libreria è il motore dietro al componente `Carousel` di shadcn). Configurazione:
-- `loop: true`
-- `align: "start"`
-- Plugin Autoplay con `delay: 0, stopOnInteraction: false, stopOnMouseEnter: true` per scroll continuo tipo "marquee"
+### 3. Responsive
+Il layout split esistente (`grid lg:grid-cols-2`) è già ottimizzato:
+- **Desktop (≥1024px):** testo a sinistra, immagine a destra.
+- **Mobile (<1024px):** immagine sotto al testo, full width della colonna.
+Nessuna modifica necessaria al grid.
 
-In alternativa, se preferisci un effetto marquee CSS puro (più leggero, senza dipendenze), si può fare con un wrapper flex animato via `@keyframes` in Tailwind. Vantaggio: zero JS, fluidità perfetta. Svantaggio: niente frecce manuali, niente snap su singola card.
+### 4. Cleanup
+- Rimuovere l'import inutilizzato di `ShieldCheck` **solo se** dopo la rimozione della card non è più usato (verifica: è ancora usato nelle stats in basso → si tiene).
 
-### Raccomandazione
-Andrei con **embla + autoplay** perché:
-- è già installato/installabile come parte di shadcn
-- consente sia lo scroll automatico continuo sia frecce manuali
-- gestisce nativamente responsive e pausa su hover
-- meglio per accessibilità (touch/swipe su mobile)
+## File toccati
+- `src/assets/hero-doctor.png` (nuovo, copia da upload)
+- `src/components/Hero.tsx` (modifica)
 
-### File da modificare
-- `src/components/Staff.tsx` — sostituzione griglia con Carousel, semplificazione footer card, ritocco dimensioni
-
-### Dipendenze
-- `embla-carousel-autoplay` (da aggiungere se non presente; `embla-carousel-react` è già usato da shadcn)
-
-Confermi questa direzione? Se preferisci la versione marquee CSS pura (più semplice, senza controlli manuali) dimmelo e modifico il piano.
+## Note
+L'immagine ha un alone circolare chiaro che funziona molto bene dentro il container `rounded-[40px]` con sfondo neutro: l'effetto risultante è un ritratto pulito ed editoriale, coerente con il resto del sito. Nessun gradient o overlay necessario.
