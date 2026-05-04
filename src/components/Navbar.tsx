@@ -19,10 +19,10 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full z-50 bg-natural-bg/80 backdrop-blur-md border-b border-natural-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
+        <div className="flex justify-between h-28 items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Studi Medici Toscana" className="h-11 w-11 object-contain" />
+            <img src={logo} alt="Studi Medici Toscana" className="h-20 w-20 md:h-24 md:w-24 object-contain" />
             <span className="text-xl font-medium tracking-tight font-serif italic text-natural-accent hidden sm:inline">
               Studi Medici Toscana
             </span>
