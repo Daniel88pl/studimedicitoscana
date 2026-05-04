@@ -92,32 +92,13 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative rounded-[40px] overflow-hidden shadow-2xl border border-natural-border">
+            <div className="relative rounded-[40px] overflow-hidden shadow-2xl border border-natural-border bg-natural-bg">
               <img
-                src="https://images.unsplash.com/photo-1629909613654-2871b886797f?auto=format&fit=crop&q=80&w=1200&h=1400"
-                alt="Studi Medici Toscana"
-                className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
-                referrerPolicy="no-referrer"
+                src={heroImage}
+                alt="Medico specialista Studi Medici Toscana"
+                className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-700"
               />
             </div>
-            {/* Floating Card */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-              className="absolute -bottom-6 -left-6 bg-white p-6 rounded-3xl shadow-xl shadow-black/5 border border-natural-card-border w-64 hidden sm:block"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-natural-accent/10 rounded-full flex items-center justify-center text-natural-accent">
-                  <ShieldCheck size={24} />
-                </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-wider text-natural-muted mb-1">Prenota in un click</p>
-                  <h4 className="font-serif text-lg italic text-natural-accent leading-tight">
-                    Risposta Rapida
-                  </h4>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
