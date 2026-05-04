@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logo from '@/assets/logo.png';
 
 const SERVICES = [
   { label: 'Servizi ambulatoriali', href: '/servizi/servizi-ambulatorio' },
@@ -23,9 +24,10 @@ const LEGAL = [
   { label: 'Note legali', href: '/note-legali' },
 ];
 
-const SAGE = '#5b7560';
-const SAGE_DARK = '#3e5544';
-const INK = '#1f2420';
+// Color tokens — pull from design system (Premium Clinical palette)
+const SAGE = 'hsl(var(--natural-accent))';
+const SAGE_DARK = 'hsl(var(--natural-accent))';
+const INK = 'hsl(var(--natural-text))';
 
 const ArrowIcon = ({ stroke = SAGE_DARK }: { stroke?: string }) => (
   <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke={stroke}
@@ -180,7 +182,7 @@ export default function Footer() {
     <footer
       className="w-full text-[14px]"
       style={{
-        background: '#f7f6f1',
+        background: 'hsl(var(--secondary))',
         color: INK,
         borderTop: '0.5px solid rgba(31,36,32,0.1)',
         fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif',
@@ -192,21 +194,14 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-[18px] flex items-center gap-[14px]">
-              <div className="relative flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full"
-                style={{ border: `1px solid ${SAGE}`, background: 'transparent' }}>
-                <span className="text-[13px] font-semibold" style={{ letterSpacing: '0.06em', color: INK }}>
-                  SMT
-                </span>
-                <span className="absolute rounded-full"
-                  style={{ inset: '-4px', border: `0.5px dashed ${SAGE}`, opacity: 0.35 }} />
-              </div>
+              <img src={logo} alt="Studi Medici Toscana" className="h-12 w-12 shrink-0 object-contain" />
               <div>
                 <div className="text-[15px] font-semibold leading-[1.2]"
                   style={{ color: INK, letterSpacing: '-0.01em' }}>
                   Studi Medici Toscana
                 </div>
                 <div className="mt-[3px] text-[11px] uppercase"
-                  style={{ color: 'rgba(31,36,32,0.42)', letterSpacing: '0.08em' }}>
+                  style={{ color: 'hsl(var(--natural-muted))', letterSpacing: '0.08em' }}>
                   Struttura sanitaria privata
                 </div>
               </div>
@@ -343,7 +338,7 @@ export default function Footer() {
               <Link
                 key={l.label}
                 to={l.href}
-                className="no-underline transition-colors hover:text-[#1f2420]"
+                className="no-underline transition-colors hover:text-natural-text"
                 style={{ color: 'rgba(31,36,32,0.42)' }}
               >
                 {l.label}
