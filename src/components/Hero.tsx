@@ -47,7 +47,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-natural-accent text-white px-8 py-4 rounded-full font-semibold shadow-xl shadow-natural-accent/10 flex items-center justify-center gap-2 text-lg hover:bg-[#4a4a35] transition-colors"
+                className="bg-natural-accent text-white px-8 py-4 rounded-full font-semibold shadow-xl shadow-natural-accent/10 flex items-center justify-center gap-2 text-lg hover:bg-natural-accent/90 transition-colors"
               >
                 <MessageCircle size={20} />
                 Prenota su WhatsApp

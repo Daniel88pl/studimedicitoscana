@@ -63,7 +63,7 @@ export default function Navbar() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-natural-accent text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-[#4a4a35] transition-colors flex items-center gap-2"
+                className="bg-natural-accent text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-natural-accent/90 transition-colors flex items-center gap-2"
               >
                 <MessageCircle size={16} />
                 Prenota Visita
