@@ -9,6 +9,7 @@ export interface Doctor {
   location: string;
   contact: string;
   longBio?: string;
+  faq?: { q: string; a: string }[];
 }
 
 export const doctors: Doctor[] = [
