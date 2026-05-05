@@ -105,7 +105,7 @@ export default function DoctorDetail() {
                 <h3 className="text-sm font-bold uppercase tracking-widest text-natural-muted mb-4">
                   Profilo e Formazione
                 </h3>
-                <p className="text-natural-text/80 leading-relaxed">
+                <p className="text-natural-text/80 leading-relaxed whitespace-pre-line">
                   {doctor.longBio || doctor.formation}
                 </p>
               </div>
