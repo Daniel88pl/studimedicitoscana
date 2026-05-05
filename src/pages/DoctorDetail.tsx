@@ -126,6 +126,33 @@ export default function DoctorDetail() {
                   ))}
                 </div>
               </div>
+
+              {doctor.faq && doctor.faq.length > 0 && (
+                <div>
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-natural-muted mb-4">
+                    Domande Frequenti
+                  </h3>
+                  <div className="space-y-3">
+                    {doctor.faq.map((item, i) => (
+                      <details
+                        key={i}
+                        className="group bg-white p-5 rounded-2xl border border-natural-border open:shadow-sm transition-shadow"
+                      >
+                        <summary className="cursor-pointer list-none flex items-start justify-between gap-4 text-natural-text font-bold">
+                          <span>{item.q}</span>
+                          <ChevronRight
+                            size={18}
+                            className="shrink-0 mt-1 text-natural-accent transition-transform group-open:rotate-90"
+                          />
+                        </summary>
+                        <p className="mt-3 text-natural-text/80 leading-relaxed text-sm whitespace-pre-line">
+                          {item.a}
+                        </p>
+                      </details>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </motion.div>
         </div>
