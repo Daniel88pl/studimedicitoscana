@@ -9,6 +9,7 @@ export interface Doctor {
   location: string;
   contact: string;
   longBio?: string;
+  faq?: { q: string; a: string }[];
 }
 
 export const doctors: Doctor[] = [
@@ -16,17 +17,26 @@ export const doctors: Doctor[] = [
     id: 'lucia-paolacci',
     name: 'Dott.ssa Lucia Paolacci',
     category: 'Geriatria',
-    role: 'Specialista in Geriatria e Ricercatrice',
+    role: 'Medico Chirurgo – Specialista in Geriatria',
     image: 'https://images.unsplash.com/photo-1559839734-2b71f1e59816?auto=format&fit=crop&q=80&w=400&h=400',
-    formation: 'Attività di ricerca presso il Dipartimento di Medicina dell’Università di Perugia (2014-2020). Profilo prevalentemente accademico.',
+    formation: 'Specialista in Geriatria (Università di Perugia). Esperienza in demenze (Alzheimer, Parkinson, declino cognitivo) e gestione delle patologie croniche dell\'anziano.',
     treatments: [
-      'Diagnosi precoce Morbo di Alzheimer',
-      'Declino cognitivo e depressione geriatrica',
-      'Analisi biomarcatori vascolari'
+      'Visita geriatrica per disturbi della memoria',
+      'Disturbi del tono dell\'umore e del comportamento',
+      'Disturbi dell\'andatura, cadute e fratture',
+      'Check-up geriatrico per invecchiamento attivo',
+      'Valutazione autosufficienza e disabilità',
+      'Visite domiciliari per pazienti fragili'
     ],
-    longBio: 'La Dott.ssa Lucia Paolacci ha un profilo con solida vocazione accademica, avendo svolto intensa attività di ricerca clinica presso il Dipartimento di Medicina dell’Università di Perugia tra il 2014 e il 2020. I suoi studi si concentrano sui biomarcatori per la diagnosi precoce dell\'Alzheimer e sul declino cognitivo legato all\'età, valutando l\'impatto della depressione geriatrica attraverso strumenti validati come la scala GDS-15 e il burden anticolinergico. Specializzata non solo sulla sfera cognitiva ma anche nello studio delle malattie vascolari e nella relazione clinica tra parametri ematici e ispessimenti vascolari.',
-    location: 'Sede Principale',
-    contact: 'info@studimedicitoscana.it'
+    longBio: 'Medico Chirurgo specialista in Geriatria, formata presso l\'Università degli Studi di Perugia, la Dott.ssa Lucia Paolacci si occupa da anni della diagnosi e cura delle patologie dell\'età avanzata, con particolare esperienza nelle demenze (Alzheimer, Parkinson e altre forme di declino cognitivo) e nella gestione delle malattie croniche tipiche dell\'anziano.\n\nSvolge attività clinica a Grosseto presso Studi Medici Toscana (Via Adriatica 7), offrendo visite ambulatoriali, valutazioni multidimensionali geriatriche, test neuropsicologici e visite a domicilio per pazienti con ridotta autonomia.\n\nLa sua pratica clinica è arricchita da una solida vocazione accademica: tra il 2014 e il 2020 ha svolto attività di ricerca presso il Dipartimento di Medicina dell\'Università di Perugia, con studi sui biomarcatori per la diagnosi precoce dell\'Alzheimer, sul declino cognitivo legato all\'età, sulla depressione geriatrica (scala GDS-15), sul burden anticolinergico e sulla relazione tra parametri ematici e patologie vascolari.\n\nPartecipa attivamente a progetti di ricerca sull\'invecchiamento cerebrale e lo stress ossidativo nella malattia di Alzheimer, ed è coinvolta in incontri divulgativi e giornate di sensibilizzazione dedicate alla memoria e alle demenze, in collaborazione con strutture residenziali e reti dedicate ai pazienti fragili.',
+    faq: [
+      { q: 'Chi è il Geriatra?', a: 'Il Geriatra è un medico specializzato nella cura del soggetto anziano.' },
+      { q: 'Cosa fa il Geriatra?', a: 'Si occupa della valutazione a 360° della persona anziana: individua le problematiche e le corregge, ove possibile, per garantire la migliore autonomia nelle attività della vita quotidiana e la migliore qualità di vita per il paziente e per i suoi familiari o assistenti.' },
+      { q: 'Quando è necessario rivolgersi al Geriatra?', a: 'In caso di problemi di memoria, depressione del tono dell\'umore, disturbi del sonno, problemi di deambulazione, cadute e fratture, oppure per definire il grado di autonomia (anche al fine di richiedere sussidi) o per un check-up volto a mantenere un invecchiamento attivo.' },
+      { q: 'Come si svolge la visita?', a: 'Il Geriatra valuta il paziente — eventualmente accompagnato dai familiari — esamina la documentazione clinica e la terapia in atto, si avvale di test specifici per riconoscere e quantificare eventuali deficit, e si coordina con il Medico di Medicina Generale nell\'approfondimento diagnostico e nell\'impostazione di una terapia adeguata. La visita è l\'inizio di un percorso condiviso con confronto continuo per valutare l\'efficacia della terapia ed eventuali modifiche.' }
+    ],
+    location: 'Sede Grosseto – Via Adriatica 7',
+    contact: '339 309 8337'
   },
   {
     id: 'margherita-pennesi',
