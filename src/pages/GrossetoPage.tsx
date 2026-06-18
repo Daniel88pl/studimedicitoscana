@@ -2,11 +2,15 @@ import { motion } from 'framer-motion';
 import { useSEO } from '../hooks/useSEO';
 import { CONTACT } from '../config/contact';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { LOCAL_BUSINESS_GROSSETO_JSONLD, SITE_URL } from '../lib/structuredData';
 
 export default function GrossetoPage() {
   useSEO({
     title: 'Sede di Grosseto',
-    description: 'Studi Medici Toscana - Sede di Grosseto. Scopri i nostri medici specialisti e servizi.',
+    description:
+      "Studi Medici Toscana a Grosseto: visite specialistiche, medicina del lavoro, medicina legale e rinnovo patente in Via Adriatico 7.",
+    canonical: `${SITE_URL}/grosseto`,
+    jsonLd: LOCAL_BUSINESS_GROSSETO_JSONLD,
   });
 
   return (

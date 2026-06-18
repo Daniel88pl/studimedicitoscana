@@ -6,9 +6,11 @@ import { useSEO } from '../hooks/useSEO';
 import { CONTACT } from '../config/contact';
 import { services } from '../data/services';
 import Contact from '../components/Contact';
+import RelatedServices from '../components/RelatedServices';
+import { buildServiceJsonLd, buildFaqJsonLd, SITE_URL } from '../lib/structuredData';
 
 // ─── Dati del servizio ───────────────────────
-const service = services.find(s => s.id === 'medicina-del-lavoro')!;
+const service = services.find((s) => s.id === 'medicina-del-lavoro')!;
 const Icon = service.icon;
 
 // ─── Markdown renderer (stesso di ServiceDetail) ─────────────────
@@ -86,7 +88,13 @@ export default function MedicinaDelLavoroPage() {
     title: 'Medicina del Lavoro e Sorveglianza Sanitaria per Aziende',
     description:
       'Gestiamo ogni aspetto della sorveglianza sanitaria aziendale: nomina del Medico Competente, visite periodiche, accertamenti e piena conformità al D.Lgs. 81/2008. Visite in azienda o in ambulatorio, copertura nazionale.',
-    canonical: 'https://www.studimedicitoscana.it/medicina-del-lavoro',
+    // FIX: la route registrata in App.tsx è /servizi/medicina-del-lavoro, non /medicina-del-lavoro.
+    // La canonical precedente puntava a un URL che non esiste (mismatch route/canonical).
+    canonical: `${SITE_URL}/servizi/medicina-del-lavoro`,
+    jsonLd: [
+      buildServiceJsonLd(service, 'medicina-del-lavoro'),
+      ...(service.faq && service.faq.length > 0 ? [buildFaqJsonLd(service.faq)] : []),
+    ],
   });
 
   useEffect(() => {
@@ -125,7 +133,7 @@ export default function MedicinaDelLavoroPage() {
                 Dettagli del Servizio
               </h3>
               <ul className="space-y-4">
-                {service.details.map(detail => (
+                {service.details.map((detail) => (
                   <li key={detail} className="flex items-center gap-3">
                     <span className="w-2 h-2 rounded-full bg-natural-accent" />
                     <span className="text-natural-text font-medium">{detail}</span>
@@ -133,6 +141,8 @@ export default function MedicinaDelLavoroPage() {
                 ))}
               </ul>
             </div>
+
+            <RelatedServices excludeId="medicina-del-lavoro" />
           </motion.div>
 
           {/* ── Colonna destra – FAQ + CTA ── */}

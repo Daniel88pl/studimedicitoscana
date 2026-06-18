@@ -6,10 +6,11 @@ import Contact from '../components/Contact';
 import { useEffect } from 'react';
 import { useSEO } from '../hooks/useSEO';
 import { CONTACT } from '../config/contact';
+import { buildPersonJsonLd, buildFaqJsonLd, SITE_URL } from '../lib/structuredData';
 
 export default function DoctorDetail() {
   const { id } = useParams();
-  const doctor = doctors.find(d => d.id === id);
+  const doctor = doctors.find((d) => d.id === id);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,8 +18,15 @@ export default function DoctorDetail() {
 
   useSEO({
     title: doctor ? `${doctor.name} – ${doctor.role}` : 'Specialista',
-    description: doctor
-      ? `${doctor.name}, ${doctor.role}. ${doctor.formation}`
+    description: doctor ? `${doctor.name}, ${doctor.role}. ${doctor.formation}` : undefined,
+    canonical: id ? `${SITE_URL}/staff/${id}` : undefined,
+    jsonLd: doctor
+      ? [
+          buildPersonJsonLd(doctor, id!),
+          ...(doctor.faq && doctor.faq.length > 0
+            ? [buildFaqJsonLd(doctor.faq.map((f) => ({ q: f.q, a: f.a })))]
+            : []),
+        ]
       : undefined,
   });
 

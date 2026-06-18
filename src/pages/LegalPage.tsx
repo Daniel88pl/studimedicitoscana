@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
+import { SITE_URL } from '../lib/structuredData';
 
 interface Section {
   title: string;
@@ -15,12 +16,16 @@ interface LegalPageProps {
 }
 
 export default function LegalPage({ title, updatedAt, intro, sections, metaDescription }: LegalPageProps) {
-  useEffect(() => {
-    document.title = `${title} — Studi Medici Toscana`;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute('content', metaDescription);
-    window.scrollTo(0, 0);
-  }, [title, metaDescription]);
+  const { pathname } = useLocation();
+
+  // PRIMA: il componente impostava document.title/description a mano, senza canonical,
+  // og:*, twitter:* né JSON-LD. ORA usa lo stesso useSEO delle altre pagine, con
+  // canonical derivata dal pathname reale (/privacy, /cookie, /termini, /note-legali).
+  useSEO({
+    title,
+    description: metaDescription,
+    canonical: `${SITE_URL}${pathname}`,
+  });
 
   return (
     <main className="min-h-screen pt-32 pb-20 bg-secondary">

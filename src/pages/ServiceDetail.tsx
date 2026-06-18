@@ -3,14 +3,16 @@ import { services } from '../data/services';
 import { ArrowLeft, ChevronRight, HelpCircle, MessageCircle, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Contact from '../components/Contact';
+import RelatedServices from '../components/RelatedServices';
 import { useEffect } from 'react';
 import { useSEO } from '../hooks/useSEO';
 import { CONTACT } from '../config/contact';
+import { buildServiceJsonLd, buildFaqJsonLd, SITE_URL } from '../lib/structuredData';
 
 // ─────────────────────────────────────────────
-//  Markdown renderer – gestisce:
-//  ### Titoli, --- dividers, **bold**,
-//  - liste puntate, paragrafi normali
+// Markdown renderer – gestisce:
+// ### Titoli, --- dividers, **bold**,
+// - liste puntate, paragrafi normali
 // ─────────────────────────────────────────────
 function parseBold(str: string): React.ReactNode {
   const parts = str.split(/(\*\*[^*]+\*\*)/);
@@ -82,7 +84,7 @@ function renderMarkdown(text: string): React.ReactNode[] {
 
 export default function ServiceDetail() {
   const { id } = useParams();
-  const service = services.find(s => s.id === id);
+  const service = services.find((s) => s.id === id);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -91,6 +93,13 @@ export default function ServiceDetail() {
   useSEO({
     title: service?.title ?? 'Servizio',
     description: service?.description,
+    canonical: id ? `${SITE_URL}/servizi/${id}` : undefined,
+    jsonLd: service
+      ? [
+          buildServiceJsonLd(service, id!),
+          ...(service.faq && service.faq.length > 0 ? [buildFaqJsonLd(service.faq)] : []),
+        ]
+      : undefined,
   });
 
   if (!service) return <Navigate to="/" replace />;
@@ -126,7 +135,7 @@ export default function ServiceDetail() {
                 Dettagli del Servizio
               </h3>
               <ul className="space-y-4">
-                {service.details.map(detail => (
+                {service.details.map((detail) => (
                   <li key={detail} className="flex items-center gap-3">
                     <span className="w-2 h-2 rounded-full bg-natural-accent" />
                     <span className="text-natural-text font-medium">{detail}</span>
@@ -134,6 +143,8 @@ export default function ServiceDetail() {
                 ))}
               </ul>
             </div>
+
+            <RelatedServices excludeId={service.id} />
           </motion.div>
 
           {/* Right column – FAQ + CTA */}
