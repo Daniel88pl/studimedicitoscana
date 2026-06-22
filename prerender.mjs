@@ -46,6 +46,9 @@ const original = fs.readFileSync("package.json", "utf8");
 const pkg = JSON.parse(original);
 pkg.reactSnap = {
   source: "dist",
+  // Deve combaciare con "base" in vite.config.prerender.ts: il sito gratuito GitHub Pages
+  // vive su https://daniel88pl.github.io/studimedicitoscana/, non alla radice.
+  publicPath: "/studimedicitoscana/",
   minifyHtml: { collapseWhitespace: false, removeComments: false },
   puppeteerArgs: ["--no-sandbox", "--disable-setuid-sandbox"],
   skipThirdPartyRequests: true,
@@ -61,4 +64,15 @@ try {
   fs.writeFileSync("package.json", original);
   console.log("package.json ripristinato pulito.");
 }
+
+console.log("4/4  Predispongo dist/ per GitHub Pages (.nojekyll + 404.html)...");
+// GitHub Pages esegue Jekyll di default, che ignora file/cartelle che iniziano con "_":
+// .nojekyll disattiva questo comportamento (precauzione, anche se Vite non genera cartelle "_").
+fs.writeFileSync("dist/.nojekyll", "");
+// GitHub Pages cerca un file 404.html alla radice del sito per le pagine non trovate:
+// la route "/404" è già stata prerenderizzata in dist/404/index.html, la copiamo al posto giusto.
+if (fs.existsSync("dist/404/index.html")) {
+  fs.copyFileSync("dist/404/index.html", "dist/404.html");
+}
+
 console.log("FATTO: dist/ prerenderizzata, ogni route è un HTML separato.");

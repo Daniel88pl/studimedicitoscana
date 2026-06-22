@@ -8,7 +8,12 @@ import path from "path";
 // li trascrive in sintassi compatibile.
 // File separato dalla config base: Lovable rigenera vite.config.ts ma NON tocca questo file.
 // alias/dedupe replicati identici a vite.config.ts (root) per evitare doppie istanze di React.
+//
+// base: GitHub Pages gratuito serve il sito da un sottopercorso
+// (https://daniel88pl.github.io/studimedicitoscana/), non dalla radice del dominio.
+// Se in futuro collegherai un dominio personalizzato, rimetti base a "/".
 export default defineConfig({
+  base: "/studimedicitoscana/",
   plugins: [react()],
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
