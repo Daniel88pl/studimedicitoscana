@@ -1,6 +1,7 @@
 // Helper per generare dati strutturati schema.org coerenti su tutto il sito.
 // Tutti i valori NAP (nome/indirizzo/telefono) sono presi da src/components/Footer.tsx
 // e devono restare identici ovunque compaiano (sito + Google Business Profile).
+export { SITE_URL } from '../hooks/useSEO';
 import { SITE_URL } from '../hooks/useSEO';
 
 const BRAND = 'Studi Medici Toscana';
