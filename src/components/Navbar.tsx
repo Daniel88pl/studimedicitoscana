@@ -1,20 +1,53 @@
-import { motion } from 'framer-motion';
-import { Menu, X, MessageCircle } from 'lucide-react';
-import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, MessageCircle, ChevronDown } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { CONTACT } from '../config/contact';
+import { services } from '../data/services';
 import logo from '@/assets/logo.png';
 
 const NAV_LINKS = [
-  { href: '/#servizi', label: 'Servizi' },
   { href: '/#specialisti', label: 'Specialisti' },
   { href: '/#chi-siamo', label: 'Chi Siamo' },
   { href: '/grosseto', label: 'Grosseto', isRoute: true },
   { href: '/#contatti', label: 'Contatti' },
 ];
 
+// Etichette brevi per il menu (alcuni titoli dei servizi sono lunghi/descrittivi
+// e non si adattano bene a una voce di menu a tendina).
+const SERVICE_NAV_LABELS: Record<string, string> = {
+  'servizi-ambulatorio': 'Servizi ambulatoriali',
+  'equipe-pediatrica': 'Equipe pediatrica',
+  'medicina-del-lavoro': 'Medicina del lavoro',
+  'medicina-legale': 'Medicina legale',
+  'patente-porto-armi': "Rinnovo patente e porto d'armi",
+  'servizio-domicilio': 'Servizio a domicilio',
+};
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  // Chiude i menu apri quando si cambia pagina
+  useEffect(() => {
+    setServicesOpen(false);
+    setIsOpen(false);
+    setMobileServicesOpen(false);
+  }, [location.pathname]);
+
+  // Chiude il dropdown desktop al click fuori
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <nav className="fixed w-full z-50 bg-natural-bg/80 backdrop-blur-md border-b border-natural-border">
@@ -30,6 +63,45 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
+            {/* Servizi: dropdown con tutti i servizi, ognuno verso la propria pagina */}
+            <div className="relative" ref={servicesRef}>
+              <button
+                type="button"
+                onClick={() => setServicesOpen((open) => !open)}
+                aria-expanded={servicesOpen}
+                aria-haspopup="true"
+                className={`flex items-center gap-1 text-xs uppercase tracking-widest font-semibold transition-colors ${
+                  servicesOpen ? 'text-natural-accent' : 'text-natural-muted hover:text-natural-accent'
+                }`}
+              >
+                Servizi
+                <ChevronDown size={14} className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              <AnimatePresence>
+                {servicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-72 bg-white rounded-2xl border border-natural-border shadow-xl p-2"
+                  >
+                    {services.map((service) => (
+                      <Link
+                        key={service.id}
+                        to={`/servizi/${service.id}`}
+                        onClick={() => setServicesOpen(false)}
+                        className="block px-4 py-3 rounded-xl text-sm font-medium text-natural-text/80 hover:bg-natural-bg hover:text-natural-accent transition-colors"
+                      >
+                        {SERVICE_NAV_LABELS[service.id] ?? service.title}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             {NAV_LINKS.map(link =>
               link.isRoute ? (
                 <NavLink
@@ -86,6 +158,33 @@ export default function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-white border-b border-natural-border px-4 py-6 space-y-4 shadow-xl"
         >
+          {/* Servizi: accordion con tutti i servizi */}
+          <div>
+            <button
+              type="button"
+              onClick={() => setMobileServicesOpen((open) => !open)}
+              aria-expanded={mobileServicesOpen}
+              className="flex items-center justify-between w-full text-lg font-medium text-natural-text/70 py-2"
+            >
+              Servizi
+              <ChevronDown size={18} className={`transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {mobileServicesOpen && (
+              <div className="pl-4 pb-2 space-y-3">
+                {services.map((service) => (
+                  <Link
+                    key={service.id}
+                    to={`/servizi/${service.id}`}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-base text-natural-text/60 hover:text-natural-accent transition-colors"
+                  >
+                    {SERVICE_NAV_LABELS[service.id] ?? service.title}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           {NAV_LINKS.map(link =>
             link.isRoute ? (
               <Link
