@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useRef, useMemo } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { useState, useRef, useMemo, useEffect } from 'react';
+import { ChevronRight, Pause, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -23,6 +23,7 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
           alt={doctor.name}
           className="w-16 h-16 rounded-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 shrink-0"
           referrerPolicy="no-referrer"
+          loading="lazy"
         />
         <div className="min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
@@ -36,7 +37,7 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
       </div>
 
       <div className="flex-1 flex flex-col gap-4">
-        <p className="text-base text-natural-text/80 leading-relaxed border-l-2 border-natural-border pl-3">
+        <p className="text-base text-natural-text/80 leading-relaxed italic">
           {trimmedFormation}
         </p>
         <div>
@@ -76,6 +77,8 @@ export default function Staff() {
   // Carosello attivo solo se ci sono più di 3 specialisti
   const useCarousel = filteredDoctors.length > 3;
 
+  const [isAutoplayOn, setIsAutoplayOn] = useState(true);
+
   const autoplay = useRef(
     Autoplay({
       delay: 2800,
@@ -89,12 +92,30 @@ export default function Staff() {
     [autoplay.current]
   );
 
+  // Rispetta la preferenza utente per la riduzione del movimento
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      autoplay.current.stop();
+      setIsAutoplayOn(false);
+    }
+  }, []);
+
+  const toggleAutoplay = () => {
+    if (autoplay.current.isPlaying()) {
+      autoplay.current.stop();
+      setIsAutoplayOn(false);
+    } else {
+      autoplay.current.play();
+      setIsAutoplayOn(true);
+    }
+  };
+
   return (
     <section id="specialisti" className="py-24 bg-natural-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl">
-            <span className="text-xs uppercase tracking-[0.2em] text-natural-muted font-bold mb-4 block">Il Nostro Staff</span>
             <h2 className="text-4xl lg:text-5xl font-serif text-natural-text mb-4 tracking-tight">
               I Nostri <span className="italic text-natural-accent">Specialisti</span>
             </h2>
@@ -105,12 +126,13 @@ export default function Staff() {
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap gap-3 mb-12">
+        <div className="flex flex-wrap items-center gap-3 mb-12">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${
+              aria-pressed={filter === cat}
+              className={`min-h-[44px] px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${
                 filter === cat
                   ? 'bg-natural-accent text-white shadow-lg shadow-natural-accent/20 border-natural-accent'
                   : 'bg-white border border-natural-border text-natural-muted hover:border-natural-accent hover:text-natural-accent'
@@ -119,6 +141,17 @@ export default function Staff() {
               {cat}
             </button>
           ))}
+
+          {useCarousel && (
+            <button
+              onClick={toggleAutoplay}
+              aria-label={isAutoplayOn ? 'Metti in pausa lo scorrimento automatico' : 'Riprendi lo scorrimento automatico'}
+              aria-pressed={isAutoplayOn}
+              className="ml-auto inline-flex items-center justify-center w-11 h-11 rounded-full border border-natural-border bg-white text-natural-muted hover:text-natural-accent hover:border-natural-accent transition-colors"
+            >
+              {isAutoplayOn ? <Pause size={18} /> : <Play size={18} />}
+            </button>
+          )}
         </div>
 
         {useCarousel ? (

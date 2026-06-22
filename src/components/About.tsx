@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function About() {
   return (
@@ -18,6 +19,7 @@ export default function About() {
                 alt="Our Facility" 
                 className="w-full h-full object-cover grayscale-[10%]"
                 referrerPolicy="no-referrer"
+                loading="lazy"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-natural-accent/10 rounded-[40px] -z-0 hidden md:block" />
@@ -30,7 +32,6 @@ export default function About() {
             viewport={{ once: true }}
             className="lg:w-1/2"
           >
-            <span className="text-xs uppercase tracking-[0.2em] text-natural-muted font-bold mb-4 block">Chi Siamo</span>
             <h2 className="text-4xl lg:text-5xl font-serif text-natural-text mb-6 leading-tight">
               Un servizio sanitario <br />
               <span className="italic text-natural-accent">completo e organizzato</span>
@@ -53,9 +54,12 @@ export default function About() {
               </div>
             </div>
 
-            <button className="bg-natural-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-natural-accent/90 transition-colors shadow-lg shadow-natural-accent/10">
-              Leggi la Nostra Storia
-            </button>
+            <Link
+              to="/#specialisti"
+              className="inline-flex items-center bg-natural-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-natural-accent/90 transition-colors shadow-lg shadow-natural-accent/10"
+            >
+              Scopri il Nostro Team
+            </Link>
           </motion.div>
         </div>
       </div>

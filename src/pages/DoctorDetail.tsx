@@ -56,6 +56,8 @@ export default function DoctorDetail() {
                 alt={doctor.name}
                 className="w-full h-full object-cover grayscale-[20%]"
                 referrerPolicy="no-referrer"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
 

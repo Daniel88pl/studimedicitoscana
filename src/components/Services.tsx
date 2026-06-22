@@ -39,7 +39,7 @@ export default function Services() {
               </p>
               <ul className="space-y-2 mb-8 mt-auto">
                 {service.details.map((detail) => (
-                  <li key={detail} className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-natural-muted/70">
+                  <li key={detail} className="flex items-center gap-2 text-xs font-semibold tracking-wide text-natural-muted">
                     <span className="w-1 h-1 rounded-full bg-natural-accent" />
                     {detail}
                   </li>

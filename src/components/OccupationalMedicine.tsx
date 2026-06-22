@@ -60,6 +60,7 @@ export default function OccupationalMedicine() {
                 alt="Medicina del Lavoro" 
                 className="w-full h-full object-cover grayscale-[15%]"
                 referrerPolicy="no-referrer"
+                loading="lazy"
               />
             </div>
             

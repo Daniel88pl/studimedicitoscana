@@ -97,6 +97,8 @@ export default function Hero() {
                 src={heroImage}
                 alt="Medico specialista Studi Medici Toscana"
                 className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-700"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
           </motion.div>

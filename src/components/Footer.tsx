@@ -194,7 +194,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-[18px] flex items-center gap-[14px]">
-              <img src={logo} alt="Studi Medici Toscana" className="h-20 w-20 shrink-0 object-contain" />
+              <img src={logo} alt="Studi Medici Toscana" className="h-20 w-20 shrink-0 object-contain" loading="lazy" />
               <div>
                 <div className="text-[15px] font-semibold leading-[1.2]"
                   style={{ color: INK, letterSpacing: '-0.01em' }}>

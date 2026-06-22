@@ -13,7 +13,6 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-xs uppercase tracking-[0.2em] text-natural-muted font-bold mb-4 block">Contatti e Sedi</span>
             <h2 className="text-4xl lg:text-5xl font-serif mb-8 leading-tight">Siamo qui <span className="italic text-natural-accent">per te.</span></h2>
             <p className="text-lg text-natural-muted mb-12 leading-relaxed">
               Scegli la sede più comoda e contattaci per informazioni, prenotazioni visite o richieste aziendali. Il nostro staff ti guiderà nella scelta del percorso più adatto.
@@ -63,36 +62,40 @@ export default function Contact() {
             <form className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[10px] uppercase tracking-widest font-bold text-natural-muted mb-2">Nome</label>
+                  <label htmlFor="contact-nome" className="block text-xs uppercase tracking-widest font-bold text-natural-muted mb-2">Nome</label>
                   <input 
+                    id="contact-nome"
                     type="text" 
                     placeholder="Mario"
-                    className="w-full px-6 py-4 rounded-2xl bg-natural-bg border border-natural-border focus:border-natural-accent outline-none transition-all font-medium text-sm"
+                    className="w-full px-6 py-4 rounded-2xl bg-natural-bg border border-natural-border focus:border-natural-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-natural-accent transition-all font-medium text-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] uppercase tracking-widest font-bold text-natural-muted mb-2">Cognome</label>
+                  <label htmlFor="contact-cognome" className="block text-xs uppercase tracking-widest font-bold text-natural-muted mb-2">Cognome</label>
                   <input 
+                    id="contact-cognome"
                     type="text" 
                     placeholder="Rossi"
-                    className="w-full px-6 py-4 rounded-2xl bg-natural-bg border border-natural-border focus:border-natural-accent outline-none transition-all font-medium text-sm"
+                    className="w-full px-6 py-4 rounded-2xl bg-natural-bg border border-natural-border focus:border-natural-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-natural-accent transition-all font-medium text-sm"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-[10px] uppercase tracking-widest font-bold text-natural-muted mb-2">Email</label>
+                <label htmlFor="contact-email" className="block text-xs uppercase tracking-widest font-bold text-natural-muted mb-2">Email</label>
                 <input 
+                  id="contact-email"
                   type="email" 
                   placeholder="mario.rossi@email.com"
-                  className="w-full px-6 py-4 rounded-2xl bg-natural-bg border border-natural-border focus:border-natural-accent outline-none transition-all font-medium text-sm"
+                  className="w-full px-6 py-4 rounded-2xl bg-natural-bg border border-natural-border focus:border-natural-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-natural-accent transition-all font-medium text-sm"
                 />
               </div>
               <div>
-                <label className="block text-[10px] uppercase tracking-widest font-bold text-natural-muted mb-2">Messaggio</label>
+                <label htmlFor="contact-messaggio" className="block text-xs uppercase tracking-widest font-bold text-natural-muted mb-2">Messaggio</label>
                 <textarea 
+                  id="contact-messaggio"
                   rows={4}
                   placeholder="Come possiamo aiutarti?"
-                  className="w-full px-6 py-4 rounded-2xl bg-natural-bg border border-natural-border focus:border-natural-accent outline-none transition-all font-medium text-sm"
+                  className="w-full px-6 py-4 rounded-2xl bg-natural-bg border border-natural-border focus:border-natural-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-natural-accent transition-all font-medium text-sm"
                 ></textarea>
               </div>
               <motion.button
