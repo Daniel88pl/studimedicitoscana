@@ -64,17 +64,6 @@ export default function OccupationalMedicine() {
               />
             </div>
             
-            <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-[32px] border border-natural-card-border shadow-xl z-20 w-72">
-              <div className="flex items-center gap-4 mb-3">
-                <div className="w-10 h-10 bg-natural-accent/10 rounded-full flex items-center justify-center text-natural-accent">
-                  <Users size={20} />
-                </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-natural-muted">Copertura D.Lgs 81/08</p>
-                  <p className="font-serif italic font-medium text-natural-accent">Protocolli su Misura</p>
-                </div>
-              </div>
-            </div>
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-natural-accent/5 rounded-full -z-0"></div>
           </motion.div>
         </div>
