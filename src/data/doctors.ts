@@ -1,3 +1,6 @@
+import avatarDottore from "../assets/avatar-dottore.png";
+import avatarDottoressa from "../assets/avatar-dottoressa.png";
+
 export interface Doctor {
   id: string;
   name: string;
