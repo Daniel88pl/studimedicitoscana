@@ -65,7 +65,7 @@ export default function Hero() {
               <div>
                 <div className="flex items-center gap-2 text-natural-accent mb-1">
                   <Award size={20} />
-                  <span className="font-serif font-bold text-xl">25+</span>
+                  <span className="font-serif font-bold text-xl">9+</span>
                 </div>
                 <p className="text-xs uppercase tracking-wider text-natural-muted font-bold">Specialisti</p>
               </div>
