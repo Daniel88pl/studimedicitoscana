@@ -1,3 +1,6 @@
+import avatarDottore from "../assets/avatar-dottore.png";
+import avatarDottoressa from "../assets/avatar-dottoressa.png";
+
 export interface Doctor {
   id: string;
   name: string;
@@ -18,7 +21,7 @@ export const doctors: Doctor[] = [
     name: "Dott.ssa Lucia Paolacci",
     category: "Geriatria",
     role: "Medico Chirurgo – Specialista in Geriatria",
-    image: "https://images.unsplash.com/photo-1559839734-2b71f1e59816?auto=format&fit=crop&q=80&w=400&h=400",
+    image: avatarDottoressa,
     formation:
       "Specialista in Geriatria (Università di Perugia). Esperienza in demenze (Alzheimer, Parkinson, declino cognitivo) e gestione delle patologie croniche dell'anziano.",
     treatments: [
@@ -54,7 +57,7 @@ export const doctors: Doctor[] = [
     name: "Dott.ssa Margherita Pennesi",
     category: "Nutrizione",
     role: "Biologa Nutrizionista e Igienista Dentale",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=400&h=400",
+    image: avatarDottoressa,
     formation:
       "Biologa nutrizionista e igienista dentale (doppia specializzazione). Approccio olistico focalizzato su prevenzione.",
     treatments: [
@@ -73,7 +76,7 @@ export const doctors: Doctor[] = [
     name: "Dott.ssa Antonella Lodde",
     category: "Nutrizione",
     role: "Biologa Nutrizionista",
-    image: "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&q=80&w=400&h=400",
+    image: avatarDottoressa,
     formation:
       "Laurea Magistrale con lode in Scienze dell’alimentazione. Master in Nutraceutica e Psicologia alimentare.",
     treatments: [
@@ -92,7 +95,7 @@ export const doctors: Doctor[] = [
     name: "Davide Gamelli",
     category: "Osteopatia & Podologia",
     role: "Osteopata",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400&h=400",
+    image: avatarDottore,
     formation: "Professionista specializzato nel benessere osteopatico mirato al ripristino dell'equilibrio corporeo.",
     treatments: ["Trattamenti osteopatici", "Recupero funzionale e articolare", "Benessere posturale preventivo"],
     longBio:
@@ -105,7 +108,7 @@ export const doctors: Doctor[] = [
     name: "Dott. Gabriele Solari",
     category: "Osteopatia & Podologia",
     role: "Fisioterapista, Osteopata, Podologo",
-    image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400&h=400",
+    image: avatarDottore,
     formation:
       "Laurea in Podologia (110 Lode), Osteopata (C.I.O. Bologna) e Fisioterapista. Master Posturologia Clinica.",
     treatments: [
@@ -124,7 +127,7 @@ export const doctors: Doctor[] = [
     name: "Dott.ssa Lucia Vaselli",
     category: "Psicologia",
     role: "Psicologa e Psicoterapeuta",
-    image: "https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&q=80&w=400&h=400",
+    image: avatarDottoressa,
     formation: "Tirocinio S.I.S.P.Se. in sessuologia clinica. Terapista accreditata nella Rete Aimuse.",
     treatments: [
       "Approccio integrale corpo-mente",
@@ -141,7 +144,7 @@ export const doctors: Doctor[] = [
     name: "Dott.ssa Giada Cencini",
     category: "Psicologia",
     role: "Psicologa",
-    image: "https://images.unsplash.com/photo-1601288496920-b6154fe3626a?auto=format&fit=crop&q=80&w=400&h=400",
+    image: avatarDottoressa,
     formation:
       "Master Universitari su DCA, Sessuologia, Psicologia dello Sport, Identità Sessuali. Iscr. Ordine 10412.",
     treatments: [
@@ -160,7 +163,7 @@ export const doctors: Doctor[] = [
     name: "Dott. Samuele Benanchi",
     category: "Psicologia",
     role: "Psicologo Giuridico e Forense",
-    image: "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&q=80&w=400&h=400",
+    image: avatarDottore,
     formation:
       "CTU presso Tribunale di Grosseto. Volontariato in prevenzione e benessere. Specialista in Cineforum terapeutico.",
     treatments: [
@@ -178,7 +181,7 @@ export const doctors: Doctor[] = [
     name: "Dott. Jurgen Sota",
     category: "Reumatologia",
     role: "Dottore di Ricerca in Reumatologia",
-    image: "https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&q=80&w=400&h=400",
+    image: avatarDottore,
     formation: "Dottorato Genetica e Medicina Clinica (Siena). H-index 19. Autore di 100+ articoli scientifici.",
     treatments: [
       "Artrite Psoriasica e Spondiloartrite",
