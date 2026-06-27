@@ -57,10 +57,9 @@ export default function OccupationalMedicine() {
           >
             <div className="aspect-square rounded-[40px] overflow-hidden border border-natural-border shadow-2xl relative z-10">
               <img 
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1000&h=1000" 
-                alt="Medicina del Lavoro" 
-                className="w-full h-full object-cover grayscale-[15%]"
-                referrerPolicy="no-referrer"
+                src={medicinaLavoroImg} 
+                alt="Medicina del Lavoro - Studi Medici Toscana" 
+                className="w-full h-full object-contain bg-white"
                 loading="lazy"
               />
             </div>
