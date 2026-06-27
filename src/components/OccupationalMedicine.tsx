@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Briefcase, CheckCircle2, ChevronRight, Users } from 'lucide-react';
+import medicinaLavoroImg from '@/assets/medicina-del-lavoro.png';
 import { Link } from 'react-router-dom';
 
 export default function OccupationalMedicine() {
